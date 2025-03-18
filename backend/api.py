@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 import pandas as pd
 import json
 import numpy as np
@@ -86,14 +86,14 @@ def recommend_songs(cluster_id: int, intensity: int = 5):
             if not liked_features.empty and not cluster_songs.empty:
                 similarity_scores = cosine_similarity(liked_features, cluster_songs[features])
                 cluster_songs['similarity'] = similarity_scores.mean(axis=0)
-                sorted_songs = sorted_songs.sort_values(by="similarity", ascending=False)
+                cluster_songs = cluster_songs.sort_values(by="similarity", ascending=False)
 
         if disliked_songs:
             disliked_features = data[data["uri"].isin(disliked_songs)][features]
             if not disliked_features.empty and not cluster_songs.empty:
                 similarity_scores = cosine_similarity(disliked_features, cluster_songs[features])
                 cluster_songs['similarity'] = similarity_scores.mean(axis=0)
-                sorted_songs = sorted_songs.sort_values(by="similarity", ascending=True)
+                cluster_songs = cluster_songs.sort_values(by="similarity", ascending=True)
 
         recommendations = sorted_songs.head(20)[["uri", "PCA1", "PCA2", "PCA3"]].to_dict(orient="records")
         return {"cluster": cluster_id, "songs": recommendations}

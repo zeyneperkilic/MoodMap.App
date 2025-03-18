@@ -125,12 +125,12 @@
             Plotly.newPlot('moodChart', [trace], layout);
 
             document.getElementById('moodChart').on('plotly_click', function(data) {
-                let pointIndex = data.points[0].pointIndex;
-                currentSongUri = labels[pointIndex];
-
-                document.getElementById('spotifyIframe').src = `https://open.spotify.com/embed/track/${currentSongUri}`;
-                document.getElementById('songModal').style.display = "flex";
-            });
+    const pointIndex = data.points[0].pointNumber;   // <== burada pointNumber dene
+    currentSongUri = allSongs[pointIndex].uri;
+    const trackId = currentSongUri.split(':').pop();
+    document.getElementById('spotifyIframe').src = `https://open.spotify.com/embed/track/${trackId}`;
+    document.getElementById('songModal').style.display = "flex";
+});
         }
 
         plot3D(allSongs);
