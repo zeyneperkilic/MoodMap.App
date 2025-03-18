@@ -3,7 +3,8 @@ import requests
 
 app = Flask(__name__)
 
-API_URL = "http://127.0.0.1:8000"
+import os
+API_URL = os.getenv("API_URL", "http://backend:8000")
 
 @app.route('/')
 def home():
@@ -32,7 +33,8 @@ def mood_map(color):
         mood_name=color.capitalize(),
         mood_color=color,
         cluster_id=cluster_id,
-        songs=songs
+        songs=songs,
+        all_songs=songs
     )
 
 @app.route('/recommend', methods=['GET'])
@@ -43,7 +45,6 @@ def recommend():
     if not cluster_id or not intensity:
         return "Missing parameters", 400
 
-
     response = requests.get(f"{API_URL}/recommend/{cluster_id}?intensity={intensity}")
     songs = response.json().get("songs", []) if response.status_code == 200 else []
 
@@ -53,8 +54,8 @@ def recommend():
         mood_color="gray",
         cluster_id=cluster_id,
         songs=songs,
-        all_songs=[]
+        all_songs=songs  # Kritik nokta!
     )
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)

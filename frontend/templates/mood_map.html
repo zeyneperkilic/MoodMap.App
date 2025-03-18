@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood-Based Song Map</title>
+    <title>Mood-Based Song Map (Enhanced)</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; background-color: white; color: black; }
         .button-container { margin-bottom: 20px; }
-        .filter-btn { padding: 10px 15px; font-size: 14px; margin: 5px; cursor: pointer; border: none; border-radius: 5px; }
-        .filter-btn:hover { opacity: 0.8; }
+        .filter-btn, .home-btn { padding: 10px 15px; font-size: 14px; margin: 5px; cursor: pointer; border: none; border-radius: 5px; }
+        .filter-btn:hover, .home-btn:hover { opacity: 0.8; }
         #red-btn { background-color: red; }
         #black-btn { background-color: black; color: white; }
         #yellow-btn { background-color: yellow; }
         #green-btn { background-color: green; }
         #all-btn { background-color: gray; color: white; }
+        .home-btn { background-color: dodgerblue; color: white; }
         #moodChart { width: 90%; height: 600px; margin: auto; }
         .slider-container { margin-top: 15px; }
         .slider-container input { width: 200px; }
@@ -28,10 +29,15 @@
         .like-btn { background-color: green; color: white; }
         .dislike-btn { background-color: red; color: white; }
         #commentBox { width: 90%; height: 60px; margin-top: 10px; padding: 5px; font-size: 14px; border: 1px solid #ccc; border-radius: 5px; }
+
+        .toast { visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 5px; padding: 16px; position: fixed; z-index: 100; bottom: 30px; left: 50%; transform: translateX(-50%); }
+        .toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+        @keyframes fadein { from { bottom: 0; opacity: 0; } to { bottom: 30px; opacity: 1; } }
+        @keyframes fadeout { from { bottom: 30px; opacity: 1; } to { bottom: 0; opacity: 0; } }
     </style>
 </head>
 <body>
-    <h2>Mood-Based Song Map</h2>
+    <button class="home-btn" onclick="window.location.href='/'">🏠 Back to Home</button>
 
     <div class="button-container">
         <button class="filter-btn" id="red-btn" onclick="window.location.href='/mood-map/red'">Red Mood</button>
@@ -61,6 +67,10 @@
             <h3>Spotify Player</h3>
             <iframe id="spotifyIframe" src="" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
+            <div style="margin-top: 10px;">
+                <button onclick="playRandomSong()">🎲 Random Suggest</button>
+            </div>
+
             <h4>Give Feedback</h4>
             <div class="feedback-container">
                 <button class="feedback-btn like-btn" onclick="sendFeedback(true)">👍 Like</button>
@@ -69,6 +79,8 @@
             <textarea id="commentBox" placeholder="Write a comment..."></textarea>
         </div>
     </div>
+
+    <div id="toast" class="toast">Feedback received!</div>
 
     <script>
         document.getElementById("moodIntensity").oninput = function() {
@@ -81,7 +93,7 @@
             document.getElementById("intensityInput").value = intensityValue;
         };
 
-        let allSongs = {{ songs | tojson }};
+        let allSongs = {{ all_songs | tojson | safe }};
         let currentSongUri = "";
 
         function plot3D(songs) {
@@ -91,7 +103,7 @@
             let labels = songs.map(song => song.uri);
 
             let colorMap = { "red": "red", "black": "black", "yellow": "yellow", "green": "green", "all": "gray" };
-            let selectedColor = "{{ mood_color }}" in colorMap ? colorMap["{{ mood_color }}"] : "gray";
+            let selectedColor = colorMap["{{ mood_color }}"] || "gray";
 
             let trace = {
                 x: xValues,
@@ -107,7 +119,7 @@
             let layout = {
                 title: '3D Mood-Based Song Clusters',
                 margin: { l: 0, r: 0, b: 0, t: 40 },
-                scene: { camera: { eye: {x: 1.5, y: 1.5, z: 1.5} } }
+                scene: { camera: { eye: { x: 1.5, y: 1.5, z: 1.5 } } }
             };
 
             Plotly.newPlot('moodChart', [trace], layout);
@@ -116,7 +128,6 @@
                 let pointIndex = data.points[0].pointIndex;
                 currentSongUri = labels[pointIndex];
 
-                // Spotify Embed Link
                 document.getElementById('spotifyIframe').src = `https://open.spotify.com/embed/track/${currentSongUri}`;
                 document.getElementById('songModal').style.display = "flex";
             });
@@ -130,13 +141,26 @@
 
         function sendFeedback(liked) {
             let comment = document.getElementById("commentBox").value;
-            fetch('/feedback', {
+            fetch('http://127.0.0.1:8000/feedback', {
                 method: 'POST',
                 body: JSON.stringify({ song: currentSongUri, liked: liked, comment: comment }),
                 headers: { 'Content-Type': 'application/json' }
             }).then(response => response.json())
-              .then(data => alert(data.message));
+              .then(data => showToast(data.message));
             closeModal();
+        }
+
+        function playRandomSong() {
+            const randomSong = allSongs[Math.floor(Math.random() * allSongs.length)];
+            currentSongUri = randomSong.uri;
+            document.getElementById('spotifyIframe').src = `https://open.spotify.com/embed/track/${randomSong.uri}`;
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.innerText = message;
+            toast.className = "toast show";
+            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
         }
     </script>
 </body>

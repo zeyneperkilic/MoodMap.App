@@ -8,8 +8,20 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import uvicorn
 from textblob import TextBlob
+from fastapi.middleware.cors import CORSMiddleware
+
+
+
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Geliştirme için *; production'da domainini yaz
+    allow_credentials=True,
+    allow_methods=["*"],   # GET, POST, OPTIONS hepsine izin ver
+    allow_headers=["*"],   # Tüm headerlara izin ver
+)
 
 file_path = "processed_data.csv"
 data = pd.read_csv(file_path)
@@ -21,7 +33,6 @@ data_scaled = scaler.fit_transform(data[features])
 kmeans = KMeans(n_clusters=4, random_state=42)
 data['Cluster'] = kmeans.fit_predict(data_scaled)
 
-
 pca = PCA(n_components=3)
 pca_result = pca.fit_transform(data_scaled)
 data['PCA1'] = pca_result[:, 0]
@@ -29,7 +40,6 @@ data['PCA2'] = pca_result[:, 1]
 data['PCA3'] = pca_result[:, 2]
 
 feedback_file = "feedback.json"
-
 
 try:
     with open(feedback_file, "r") as f:
@@ -58,34 +68,39 @@ def get_cluster_songs(cluster_id: int):
 
 @app.get("/recommend/{cluster_id}")
 def recommend_songs(cluster_id: int, intensity: int = 5):
+    try:
+        cluster_songs = data[data["Cluster"] == cluster_id].copy()
+        if cluster_songs.empty:
+            return {"cluster": cluster_id, "songs": []}
 
-    cluster_songs = data[data["Cluster"] == cluster_id]
+        if intensity >= 5:
+            sorted_songs = cluster_songs.sort_values(by=['energy', 'valence'], ascending=[False, False])
+        else:
+            sorted_songs = cluster_songs.sort_values(by=['energy', 'valence'], ascending=[True, True])
 
+        liked_songs = [song for song, feedback in feedback_data.items() if feedback.get("likes", 0) > feedback.get("dislikes", 0)]
+        disliked_songs = [song for song, feedback in feedback_data.items() if feedback.get("dislikes", 0) > feedback.get("likes", 0)]
 
-    if intensity >= 5:
-        sorted_songs = cluster_songs.sort_values(by=['energy', 'valence'], ascending=[False, False])
-    else:
-        sorted_songs = cluster_songs.sort_values(by=['energy', 'valence'], ascending=[True, True])
+        if liked_songs:
+            liked_features = data[data["uri"].isin(liked_songs)][features]
+            if not liked_features.empty and not cluster_songs.empty:
+                similarity_scores = cosine_similarity(liked_features, cluster_songs[features])
+                cluster_songs['similarity'] = similarity_scores.mean(axis=0)
+                sorted_songs = sorted_songs.sort_values(by="similarity", ascending=False)
 
+        if disliked_songs:
+            disliked_features = data[data["uri"].isin(disliked_songs)][features]
+            if not disliked_features.empty and not cluster_songs.empty:
+                similarity_scores = cosine_similarity(disliked_features, cluster_songs[features])
+                cluster_songs['similarity'] = similarity_scores.mean(axis=0)
+                sorted_songs = sorted_songs.sort_values(by="similarity", ascending=True)
 
-    liked_songs = [song for song, feedback in feedback_data.items() if feedback["likes"] > feedback["dislikes"]]
-    disliked_songs = [song for song, feedback in feedback_data.items() if feedback["dislikes"] > feedback["likes"]]
+        recommendations = sorted_songs.head(20)[["uri", "PCA1", "PCA2", "PCA3"]].to_dict(orient="records")
+        return {"cluster": cluster_id, "songs": recommendations}
 
-    if liked_songs:
-        liked_features = data[data["uri"].isin(liked_songs)][features]
-        similarity_scores = cosine_similarity(liked_features, cluster_songs[features])
-        cluster_songs['similarity'] = similarity_scores.mean(axis=0)
-        sorted_songs = sorted_songs.sort_values(by="similarity", ascending=False)
-
-    if disliked_songs:
-        disliked_features = data[data["uri"].isin(disliked_songs)][features]
-        similarity_scores = cosine_similarity(disliked_features, cluster_songs[features])
-        cluster_songs['similarity'] = similarity_scores.mean(axis=0)
-        sorted_songs = sorted_songs.sort_values(by="similarity", ascending=True)
-
-
-    recommendations = sorted_songs.head(20)[["uri", "PCA1", "PCA2", "PCA3"]].to_dict(orient="records")
-    return {"cluster": cluster_id, "songs": recommendations}
+    except Exception as e:
+        print(f"Error in recommend_songs: {e}")
+        raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
 
 @app.post("/feedback")
 async def save_feedback(request: Request):
