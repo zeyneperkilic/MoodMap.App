@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Music Recommendation</title>
+    <style>
+        /* Full-page animated gradient background with a lighter purple */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #7159c1, #907ad6, #af9cec);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-size: 200% 200%;
+            animation: gradientBG 6s ease infinite;
+        }
+
+        /* Smooth animated background */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header */
+        h1 {
+            font-size: 42px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Subtext */
+        p {
+            font-size: 18px;
+            max-width: 600px;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        /* Start button */
+        .start-btn {
+            background: linear-gradient(90deg, #FFD700, #FF8C00);
+            color: black;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .start-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+        }
+
+        /* Floating music notes */
+        .music-note {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.8;
+            animation: floatNotes linear infinite;
+            color: white;
+        }
+
+        /* Different animation speeds and sizes */
+        @keyframes floatNotes {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-60px) rotate(10deg); opacity: 0.6; }
+            100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="music-note" style="top: 10%; left: 10%; animation-duration: 6s;">🎵</div>
+    <div class="music-note" style="top: 20%; left: 80%; animation-duration: 7s;">🎶</div>
+    <div class="music-note" style="top: 60%; left: 50%; animation-duration: 5s;">🎼</div>
+    <div class="music-note" style="top: 75%; left: 20%; animation-duration: 8s;">🎵</div>
+    <div class="music-note" style="top: 30%; left: 15%; animation-duration: 9s;">🎶</div>
+    <div class="music-note" style="top: 50%; left: 90%; animation-duration: 10s;">🎼</div>
+    <div class="music-note" style="top: 85%; left: 60%; animation-duration: 6.5s;">🎵</div>
+    <div class="music-note" style="top: 40%; left: 35%; animation-duration: 7.5s;">🎶</div>
+    <div class="music-note" style="top: 15%; left: 75%; animation-duration: 5.5s;">🎼</div>
+    <div class="music-note" style="top: 90%; left: 40%; animation-duration: 8.5s;">🎵</div>
+
+    <h1>Mood-Based Music Recommendation</h1>
+    <p>Let your emotions guide your music experience! Pick a color that matches your mood and explore songs that fit your vibe.</p>
+    <button class="start-btn" onclick="window.location.href='/mood-selection'">Start</button>
+
+</body>
+</html>

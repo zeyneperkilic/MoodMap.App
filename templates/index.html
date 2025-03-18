@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Music Map</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .color-buttons {
+            margin: 20px;
+        }
+        .color-button {
+            width: 150px;
+            height: 50px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #mapCanvas {
+            width: 80%;
+            height: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Select a Mood to See Songs</h1>
+
+    <div class="color-buttons">
+        <button class="color-button" style="background-color: yellow;" onclick="fetchCluster(1)">Yellow Mood</button>
+        <button class="color-button" style="background-color: red;" onclick="fetchCluster(2)">Red Mood</button>
+        <button class="color-button" style="background-color: black;" onclick="fetchCluster(3)">Black Mood</button>
+        <button class="color-button" style="background-color: green;" onclick="fetchCluster(4)">Green Mood</button>
+    </div>
+
+    <h2 id="mapTitle">Song Clusters</h2>
+    <canvas id="mapCanvas"></canvas>
+
+    <script>
+        async function fetchCluster(clusterId) {
+            const response = await fetch(`/get_recommendations/${clusterId}`);
+            const data = await response.json();
+            drawMap(data.songs, clusterId);
+        }
+
+        function drawMap(songs, clusterId) {
+            document.getElementById("mapTitle").innerText = `Cluster ${clusterId} Songs`;
+
+            const ctx = document.getElementById('mapCanvas').getContext('2d');
+            new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: `Cluster ${clusterId} Songs`,
+                        data: songs.map(song => ({
+                            x: song.PCA1,
+                            y: song.PCA2,
+                            label: song.track_name
+                        })),
+                        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                        pointRadius: 6
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: { title: { display: true, text: "PCA1" } },
+                        y: { title: { display: true, text: "PCA2" } }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.raw.label;  // Shows track name in tooltip
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>uvicorn api:app --reload --host 0.0.0.0 --port 8000
