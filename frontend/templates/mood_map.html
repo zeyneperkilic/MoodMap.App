@@ -14,7 +14,6 @@
         #black-btn { background-color: black; color: white; }
         #yellow-btn { background-color: yellow; }
         #green-btn { background-color: green; }
-        #all-btn { background-color: gray; color: white; }
         .home-btn { background-color: dodgerblue; color: white; }
         #moodChart { width: 90%; height: 600px; margin: auto; }
         .slider-container { margin-top: 15px; }
@@ -23,11 +22,6 @@
         .modal { display: none; position: fixed; z-index: 10; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; }
         .modal-content { background-color: white; padding: 20px; border-radius: 10px; width: 400px; text-align: center; position: relative; }
         .close { color: red; position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; }
-        .feedback-container { margin-top: 15px; display: flex; justify-content: center; gap: 10px; }
-        .feedback-btn { padding: 10px 15px; font-size: 16px; font-weight: bold; border: none; cursor: pointer; border-radius: 5px; transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out; }
-        .feedback-btn:hover { transform: scale(1.1); opacity: 0.9; }
-        .like-btn { background-color: green; color: white; }
-        .dislike-btn { background-color: red; color: white; }
         #commentBox { width: 90%; height: 60px; margin-top: 10px; padding: 5px; font-size: 14px; border: 1px solid #ccc; border-radius: 5px; }
 
         .toast { visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 5px; padding: 16px; position: fixed; z-index: 100; bottom: 30px; left: 50%; transform: translateX(-50%); }
@@ -37,14 +31,15 @@
     </style>
 </head>
 <body>
-    <button class="home-btn" onclick="window.location.href='/'">🏠 Back to Home</button>
+    <button class="home-btn" onclick="window.location.href='/'">HomePage</button>
 
     <div class="button-container">
-        <button class="filter-btn" id="red-btn" onclick="window.location.href='/mood-map/red'">Red Mood</button>
-        <button class="filter-btn" id="black-btn" onclick="window.location.href='/mood-map/black'">Black Mood</button>
-        <button class="filter-btn" id="yellow-btn" onclick="window.location.href='/mood-map/yellow'">Yellow Mood</button>
-        <button class="filter-btn" id="green-btn" onclick="window.location.href='/mood-map/green'">Green Mood</button>
-        <button class="filter-btn" id="all-btn" onclick="window.location.href='/mood-map/all'">Show All</button>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+            <button class="filter-btn" id="red-btn" onclick="window.location.href='/mood-map/red'">Red</button>
+            <button class="filter-btn" id="black-btn" onclick="window.location.href='/mood-map/black'">Black</button>
+            <button class="filter-btn" id="yellow-btn" onclick="window.location.href='/mood-map/yellow'">Yellow</button>
+            <button class="filter-btn" id="green-btn" onclick="window.location.href='/mood-map/green'">Green</button>
+        </div>
     </div>
 
     <div class="slider-container">
@@ -67,101 +62,105 @@
             <h3>Spotify Player</h3>
             <iframe id="spotifyIframe" src="" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-            <div style="margin-top: 10px;">
-                <button onclick="playRandomSong()">🎲 Random Suggest</button>
-            </div>
-
             <h4>Give Feedback</h4>
-            <div class="feedback-container">
-                <button class="feedback-btn like-btn" onclick="sendFeedback(true)">👍 Like</button>
-                <button class="feedback-btn dislike-btn" onclick="sendFeedback(false)">👎 Dislike</button>
-            </div>
             <textarea id="commentBox" placeholder="Write a comment..."></textarea>
+            <br>
+            <button class="feedback-btn" style="background-color: #007bff; color: white; margin-top: 10px;" onclick="submitFeedback()">Submit Feedback</button>
         </div>
     </div>
 
     <div id="toast" class="toast">Feedback received!</div>
 
     <script>
-        document.getElementById("moodIntensity").oninput = function() {
-            document.getElementById("moodValue").innerText = this.value;
-            document.getElementById("intensityInput").value = this.value;
+    document.getElementById("moodIntensity").oninput = function() {
+        document.getElementById("moodValue").innerText = this.value;
+        document.getElementById("intensityInput").value = this.value;
+    };
+
+    document.getElementById("recommendForm").onsubmit = function(event) {
+        let intensityValue = document.getElementById("moodIntensity").value;
+        document.getElementById("intensityInput").value = intensityValue;
+    };
+
+    let allSongs = {{ all_songs | tojson | safe }};
+    let currentSongUri = "";
+    let currentClusterId = {{ cluster_id }};
+    let currentIntensity = 5;
+    let currentScore = 0;
+
+    function plot3D(songs) {
+        let xValues = songs.map(song => song.PCA1);
+        let yValues = songs.map(song => song.PCA2);
+        let zValues = songs.map(song => song.PCA3);
+        let labels = songs.map(song => song.uri);
+
+        let colorMap = { "red": "red", "black": "black", "yellow": "yellow", "green": "green", "all": "gray" };
+        let selectedColor = colorMap["{{ mood_color }}"] || "gray";
+
+        let trace = {
+            x: xValues,
+            y: yValues,
+            z: zValues,
+            text: labels,
+            mode: 'markers',
+            marker: { size: 6, color: selectedColor, opacity: 0.8 },
+            type: 'scatter3d',
+            hovertemplate: "<b>Song URI:</b> %{text}<extra></extra>"
         };
 
-        document.getElementById("recommendForm").onsubmit = function(event) {
-            let intensityValue = document.getElementById("moodIntensity").value;
-            document.getElementById("intensityInput").value = intensityValue;
+        let layout = {
+            title: '3D Mood-Based Song Clusters',
+            margin: { l: 0, r: 0, b: 0, t: 40 },
+            scene: { camera: { eye: { x: 1.5, y: 1.5, z: 1.5 } } }
         };
 
-        let allSongs = {{ all_songs | tojson | safe }};
-        let currentSongUri = "";
+        Plotly.newPlot('moodChart', [trace], layout);
 
-        function plot3D(songs) {
-            let xValues = songs.map(song => song.PCA1);
-            let yValues = songs.map(song => song.PCA2);
-            let zValues = songs.map(song => song.PCA3);
-            let labels = songs.map(song => song.uri);
+        document.getElementById('moodChart').on('plotly_click', function(data) {
+            const pointIndex = data.points[0].pointNumber;
+            currentSongUri = allSongs[pointIndex].uri;
+            currentScore = allSongs[pointIndex].weighted_score || 0;
+            currentIntensity = document.getElementById("moodIntensity").value;
+            const trackId = currentSongUri.split(':').pop();
+            document.getElementById('spotifyIframe').src = `https://open.spotify.com/embed/track/${trackId}`;
+            document.getElementById('songModal').style.display = "flex";
+        });
+    }
 
-            let colorMap = { "red": "red", "black": "black", "yellow": "yellow", "green": "green", "all": "gray" };
-            let selectedColor = colorMap["{{ mood_color }}"] || "gray";
+    plot3D(allSongs);
 
-            let trace = {
-                x: xValues,
-                y: yValues,
-                z: zValues,
-                text: labels,
-                mode: 'markers',
-                marker: { size: 6, color: selectedColor, opacity: 0.8 },
-                type: 'scatter3d',
-                hovertemplate: "<b>Song URI:</b> %{text}<extra></extra>"
-            };
+    function closeModal() {
+        document.getElementById('songModal').style.display = "none";
+    }
 
-            let layout = {
-                title: '3D Mood-Based Song Clusters',
-                margin: { l: 0, r: 0, b: 0, t: 40 },
-                scene: { camera: { eye: { x: 1.5, y: 1.5, z: 1.5 } } }
-            };
-
-            Plotly.newPlot('moodChart', [trace], layout);
-
-            document.getElementById('moodChart').on('plotly_click', function(data) {
-    const pointIndex = data.points[0].pointNumber;   // <== burada pointNumber dene
-    currentSongUri = allSongs[pointIndex].uri;
-    const trackId = currentSongUri.split(':').pop();
-    document.getElementById('spotifyIframe').src = `https://open.spotify.com/embed/track/${trackId}`;
-    document.getElementById('songModal').style.display = "flex";
-});
+    function submitFeedback() {
+        let comment = document.getElementById("commentBox").value;
+        if (comment.trim() === "") {
+            showToast("Please write a comment before submitting.");
+            return;
         }
+        fetch('http://127.0.0.1:8000/feedback', {
+            method: 'POST',
+            body: JSON.stringify({
+                song: currentSongUri,
+                comment: comment,
+                cluster_id: currentClusterId,
+                intensity: currentIntensity,
+                weighted_score: currentScore
+            }),
+            headers: { 'Content-Type': 'application/json' }
+        }).then(response => response.json())
+          .then(data => showToast(data.message));
+        document.getElementById("commentBox").value = "";
+        closeModal();
+    }
 
-        plot3D(allSongs);
-
-        function closeModal() {
-            document.getElementById('songModal').style.display = "none";
-        }
-
-        function sendFeedback(liked) {
-            let comment = document.getElementById("commentBox").value;
-            fetch('http://127.0.0.1:8000/feedback', {
-                method: 'POST',
-                body: JSON.stringify({ song: currentSongUri, liked: liked, comment: comment }),
-                headers: { 'Content-Type': 'application/json' }
-            }).then(response => response.json())
-              .then(data => showToast(data.message));
-            closeModal();
-        }
-
-        function playRandomSong() {
-            const randomSong = allSongs[Math.floor(Math.random() * allSongs.length)];
-            currentSongUri = randomSong.uri;
-            document.getElementById('spotifyIframe').src = `https://open.spotify.com/embed/track/${randomSong.uri}`;
-        }
-
-        function showToast(message) {
-            const toast = document.getElementById("toast");
-            toast.innerText = message;
-            toast.className = "toast show";
-            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
-        }
+    function showToast(message) {
+        const toast = document.getElementById("toast");
+        toast.innerText = message;
+        toast.className = "toast show";
+        setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+    }
     </script>
 </body>
 </html>

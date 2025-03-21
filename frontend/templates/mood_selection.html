@@ -3,55 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pick a Mood</title>
+    <title>Pick Your Mood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            background-color: #ffffff;
+            background: radial-gradient(circle at top left, #89f7fe, #66a6ff);
             color: #333;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin: 0;
         }
         h2 {
-            font-size: 26px;
-            margin-bottom: 25px;
-            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 700;
         }
         .color-container {
-            display: flex;
-            gap: 25px;
-            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 140px);
+            grid-gap: 50px;
         }
         .color-box {
-            width: 110px;
-            height: 110px;
-            border-radius: 15px;
+            width: 140px;
+            height: 140px;
+            border-radius: 25px;
             cursor: pointer;
-            transition: transform 0.2s ease, opacity 0.3s ease, box-shadow 0.3s ease;
-            border: 5px solid transparent;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            border: 4px solid white;
         }
         .color-box:hover {
             transform: scale(1.15);
-            opacity: 0.85;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
         }
-        .selected {
-            border: 5px solid white;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-        }
+        #red { background-color: #ff0033; }      /* Daha canlı kırmızı */
+        #black { background-color: #1c1c1c; }    /* Daha derin siyah */
+        #yellow { background-color: #ffcc00; }   /* Parlak altın sarısı */
+        #green { background-color: #00cc88; }    /* Canlı zümrüt yeşili */
 
-        #red { background-color: red; }
-        #black { background-color: black; }
-        #yellow { background-color: yellow; }
-        #green { background-color: green; }
+        @media (max-width: 500px) {
+            .color-container {
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 30px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <h2>Pick a color based on how you feel right now</h2>
+    <h2>Pick a color that fits your mood</h2>
     <div class="color-container">
         <div id="red" class="color-box" onclick="selectColor('red')"></div>
         <div id="black" class="color-box" onclick="selectColor('black')"></div>

@@ -2,25 +2,23 @@ from fastapi import FastAPI, Request, HTTPException
 import pandas as pd
 import json
 import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import uvicorn
-from textblob import TextBlob
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from fastapi.middleware.cors import CORSMiddleware
-
-
-
+import logging
+import random
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Geliştirme için *; production'da domainini yaz
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],   # GET, POST, OPTIONS hepsine izin ver
-    allow_headers=["*"],   # Tüm headerlara izin ver
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 file_path = "processed_data.csv"
@@ -47,24 +45,39 @@ try:
 except:
     feedback_data = {}
 
+logging.basicConfig(filename='recommendation_check.log', level=logging.INFO, format='%(asctime)s - %(message)s')
+
+def log_weighted_check(cluster_id, intensity, songs):
+    try:
+        ascending = intensity < 5
+        scores = []
+        for song in songs:
+            score = 0.4 * song.get('energy', 0) + 0.3 * song.get('valence', 0) + 0.2 * song.get('danceability', 0) + 0.1 * song.get('tempo', 0)
+            scores.append(score)
+        sorted_scores = sorted(scores, reverse=not ascending)
+
+        if scores == sorted_scores:
+            logging.info(f"Cluster {cluster_id}, intensity={intensity} weighted score correct.")
+        else:
+            logging.error(f"Cluster {cluster_id}, intensity={intensity} weighted score not correct.")
+    except Exception as e:
+        logging.error(f"Weighted control error: {str(e)}")
+
 @app.get("/")
 def home():
     return {"message": "Welcome to the Mood-Based Music Recommendation API"}
 
 @app.get("/feedback")
 def get_feedback():
-
     return feedback_data
 
 @app.get("/clusters/{cluster_id}")
 def get_cluster_songs(cluster_id: int):
-
     cluster_songs = data[data["Cluster"] == cluster_id]
-
     if cluster_songs.empty:
         return {"songs": []}
+    return {"songs": cluster_songs.to_dict(orient="records")}
 
-    return {"songs": cluster_songs[['uri', 'Cluster', 'PCA1', 'PCA2', 'PCA3']].to_dict(orient="records")}
 
 @app.get("/recommend/{cluster_id}")
 def recommend_songs(cluster_id: int, intensity: int = 5):
@@ -73,29 +86,44 @@ def recommend_songs(cluster_id: int, intensity: int = 5):
         if cluster_songs.empty:
             return {"cluster": cluster_id, "songs": []}
 
-        if intensity >= 5:
-            sorted_songs = cluster_songs.sort_values(by=['energy', 'valence'], ascending=[False, False])
+        # Sad cluster için ek filtreler (örneğin cluster 0 = sad)
+        if cluster_id == 0:
+            cluster_songs = cluster_songs[
+                (cluster_songs['energy'] < 0.7) &
+                (cluster_songs['valence'] < 0.7) &
+                (cluster_songs['tempo'] < 115) &
+                (cluster_songs['danceability'] < 0.7)
+                ]
+
+        # Intensity'e göre tempo ve energy aralığı filtresi (diğer moodlar için)
         else:
-            sorted_songs = cluster_songs.sort_values(by=['energy', 'valence'], ascending=[True, True])
+            min_tempo = 60 + (intensity * 8)   # örneğin 5 intensity => min_tempo = 100
+            max_tempo = 180 - (intensity * 3)
+            min_energy = intensity * 0.1
+            max_energy = min(1.0, 0.6 + (intensity * 0.05))
 
-        liked_songs = [song for song, feedback in feedback_data.items() if feedback.get("likes", 0) > feedback.get("dislikes", 0)]
-        disliked_songs = [song for song, feedback in feedback_data.items() if feedback.get("dislikes", 0) > feedback.get("likes", 0)]
+            cluster_songs = cluster_songs[
+                (cluster_songs['tempo'] >= min_tempo) &
+                (cluster_songs['tempo'] <= max_tempo) &
+                (cluster_songs['energy'] >= min_energy) &
+                (cluster_songs['energy'] <= max_energy)
+            ]
 
-        if liked_songs:
-            liked_features = data[data["uri"].isin(liked_songs)][features]
-            if not liked_features.empty and not cluster_songs.empty:
-                similarity_scores = cosine_similarity(liked_features, cluster_songs[features])
-                cluster_songs['similarity'] = similarity_scores.mean(axis=0)
-                cluster_songs = cluster_songs.sort_values(by="similarity", ascending=False)
+        ascending = intensity < 5
+        cluster_songs['weighted_score'] = (
+            0.4 * cluster_songs['energy'] +
+            0.3 * cluster_songs['valence'] +
+            0.2 * cluster_songs['danceability'] +
+            0.1 * cluster_songs['tempo']
+        )
 
-        if disliked_songs:
-            disliked_features = data[data["uri"].isin(disliked_songs)][features]
-            if not disliked_features.empty and not cluster_songs.empty:
-                similarity_scores = cosine_similarity(disliked_features, cluster_songs[features])
-                cluster_songs['similarity'] = similarity_scores.mean(axis=0)
-                cluster_songs = cluster_songs.sort_values(by="similarity", ascending=True)
+        cluster_songs = cluster_songs.sort_values(by='weighted_score', ascending=ascending)
+        top_songs = cluster_songs.head(50)
+        recommendations = top_songs.sample(n=min(10, len(top_songs)))[
+            ["uri", "PCA1", "PCA2", "PCA3", "energy", "valence", "tempo", "danceability"]
+        ].to_dict(orient="records")
 
-        recommendations = sorted_songs.head(20)[["uri", "PCA1", "PCA2", "PCA3"]].to_dict(orient="records")
+        log_weighted_check(cluster_id, intensity, recommendations)
         return {"cluster": cluster_id, "songs": recommendations}
 
     except Exception as e:
@@ -104,33 +132,48 @@ def recommend_songs(cluster_id: int, intensity: int = 5):
 
 @app.post("/feedback")
 async def save_feedback(request: Request):
-
     data = await request.json()
     song = data.get("song", "Unknown")
-    liked = data.get("liked", False)
+    liked = data.get("liked")
     comment = data.get("comment", "")
+    cluster_id = data.get("cluster_id")
+    intensity = data.get("intensity")
+    weighted_score = data.get("weighted_score")
 
     if song not in feedback_data:
-        feedback_data[song] = {"likes": 0, "dislikes": 0, "comments": [], "sentiment": 0}
-
-    if liked:
-        feedback_data[song]["likes"] += 1
+        feedback_data[song] = {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [],
+            "sentiment": 0,
+            "cluster_id": cluster_id,
+            "intensity": intensity,
+            "weighted_score": weighted_score
+        }
     else:
+        # varsa güncelle
+        feedback_data[song]["cluster_id"] = cluster_id
+        feedback_data[song]["intensity"] = intensity
+        feedback_data[song]["weighted_score"] = weighted_score
+
+    if liked is True:
+        feedback_data[song]["likes"] += 1
+    elif liked is False:
         feedback_data[song]["dislikes"] += 1
 
     if comment:
         feedback_data[song]["comments"].append(comment)
-        feedback_data[song]["sentiment"] = analyze_sentiment(comment)
+        feedback_data[song]["sentiment"] = analyze_sentiment_vader(comment)
 
     with open(feedback_file, "w") as f:
         json.dump(feedback_data, f, indent=4)
 
     return {"message": f"Feedback received for {song}"}
 
-def analyze_sentiment(text):
-
-    analysis = TextBlob(text)
-    return analysis.sentiment.polarity
+def analyze_sentiment_vader(text):
+    analyzer = SentimentIntensityAnalyzer()
+    sentiment_score = analyzer.polarity_scores(text)['compound']
+    return sentiment_score
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
