@@ -10,6 +10,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 import random
+import os
 
 app = FastAPI()
 
@@ -21,7 +22,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-file_path = "processed_data.csv"
+
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(current_dir, "processed_data.csv")
 data = pd.read_csv(file_path)
 
 features = ['danceability', 'energy', 'valence', 'tempo']
