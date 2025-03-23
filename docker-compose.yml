@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: moodplay-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: moodplay-frontend
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./frontend:/app
+    environment:
+      - API_URL=http://backend:8000
+    depends_on:
+      - backend
+    restart: always

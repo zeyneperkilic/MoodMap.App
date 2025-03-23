@@ -1,0 +1,10 @@
+{
+    "test_song_uri": {
+        "likes": 1,
+        "dislikes": 0,
+        "comments": [
+            "This is awesome!"
+        ],
+        "sentiment": 1.0
+    }
+}
