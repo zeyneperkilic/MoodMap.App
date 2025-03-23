@@ -139,7 +139,7 @@
             showToast("Please write a comment before submitting.");
             return;
         }
-        fetch('http://127.0.0.1:8000/feedback', {
+        fetch('https://moodbasedmusicrec-production.up.railway.app/feedback', {
             method: 'POST',
             body: JSON.stringify({
                 song: currentSongUri,
