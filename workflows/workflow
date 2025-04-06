@@ -1,0 +1,23 @@
+name: Deploy to Heroku
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Heroku
+        uses: akshnz/heroku-cli-action@v2
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: "moodmap"  
+          heroku_email: "zeynep.erkilic@stu.khas.edu.tr" 
+
+      - name: Push to Heroku
+        run: git push https://git.heroku.com/moodmap.git HEAD:main  
