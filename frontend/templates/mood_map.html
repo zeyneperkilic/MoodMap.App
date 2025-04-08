@@ -3,90 +3,488 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood-Based Song Map (Enhanced)</title>
+    <title>MoodMap - Your Music Journey</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: white; color: black; }
-        .button-container { margin-bottom: 20px; }
-        .filter-btn, .home-btn { padding: 10px 15px; font-size: 14px; margin: 5px; cursor: pointer; border: none; border-radius: 5px; }
-        .filter-btn:hover, .home-btn:hover { opacity: 0.8; }
-        #red-btn { background-color: red; }
-        #black-btn { background-color: black; color: white; }
-        #yellow-btn { background-color: yellow; }
-        #green-btn { background-color: green; }
-        .home-btn { background-color: dodgerblue; color: white; }
-        #moodChart { width: 90%; height: 600px; margin: auto; }
-        .slider-container { margin-top: 15px; }
-        .slider-container input { width: 200px; }
+        :root {
+            --primary-gradient: linear-gradient(135deg, #2c3e50, #3498db);
+            --accent-gradient: linear-gradient(45deg, #e74c3c, #c0392b);
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
 
-        .modal { display: none; position: fixed; z-index: 10; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; }
-        .modal-content { background-color: white; padding: 20px; border-radius: 10px; width: 400px; text-align: center; position: relative; }
-        .close { color: red; position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; }
-        #commentBox { width: 90%; height: 60px; margin-top: 10px; padding: 5px; font-size: 14px; border: 1px solid #ccc; border-radius: 5px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        .toast { visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 5px; padding: 16px; position: fixed; z-index: 100; bottom: 30px; left: 50%; transform: translateX(-50%); }
-        .toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
-        @keyframes fadein { from { bottom: 0; opacity: 0; } to { bottom: 30px; opacity: 1; } }
-        @keyframes fadeout { from { bottom: 30px; opacity: 1; } to { bottom: 0; opacity: 0; } }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--primary-gradient);
+            color: var(--text-primary);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .background-pattern {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: patternShift 20s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .logout-btn {
+            padding: 0.5rem 1rem;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .color-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 1;
+        }
+
+        #red-btn { background: #FF0000; }
+        #black-btn { background: #000000; }
+        #yellow-btn { background: #FFD700; }
+        #green-btn { background: #00FF00; }
+
+        .color-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .color-btn.active {
+            opacity: 1;
+            box-shadow: 0 0 0 3px #fff;
+            transform: scale(1.1);
+        }
+
+        .mood-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .color-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .intensity-control {
+            margin-bottom: 2rem;
+        }
+
+        .intensity-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            background: #e0e0e0;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .recommend-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .recommend-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        .playlist-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, #1DB954, #1ed760);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .playlist-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(29, 185, 84, 0.3);
+        }
+
+        .playlist-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .chart-container {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            height: 600px;
+        }
+
+        #moodChart {
+            width: 100%;
+            height: 100%;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--text-primary);
+        }
+
+        .song-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .spotify-player {
+            width: 100%;
+            height: 80px;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .features-chart {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1rem;
+            height: 300px;
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feedback-section {
+            margin-top: 1rem;
+        }
+
+        .feedback-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            resize: none;
+            margin-bottom: 1rem;
+        }
+
+        .submit-feedback {
+            width: 100%;
+            padding: 1rem;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .submit-feedback:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1001;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+
+        @keyframes patternShift {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .mood-title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <button class="home-btn" onclick="window.location.href='/'">HomePage</button>
+    <div class="background-pattern"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="mood-title">{{ mood_name }} Songs</h1>
+            <div class="header-buttons">
+                <div class="color-buttons">
+                    <div class="color-btn {{ 'active' if mood_color == 'red' }}" id="red-btn" onclick="window.location.href='/mood-map/red'" style="background: #ff4444;"></div>
+                    <div class="color-btn {{ 'active' if mood_color == 'black' }}" id="black-btn" onclick="window.location.href='/mood-map/black'" style="background: #333333;"></div>
+                    <div class="color-btn {{ 'active' if mood_color == 'yellow' }}" id="yellow-btn" onclick="window.location.href='/mood-map/yellow'" style="background: #ffd700;"></div>
+                    <div class="color-btn {{ 'active' if mood_color == 'green' }}" id="green-btn" onclick="window.location.href='/mood-map/green'" style="background: #4CAF50;"></div>
+                </div>
+                <button class="logout-btn" onclick="logout()">Logout from Spotify</button>
+            </div>
+        </div>
 
-    <div class="button-container">
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
-            <button class="filter-btn" id="red-btn" onclick="window.location.href='/mood-map/red'">Red</button>
-            <button class="filter-btn" id="black-btn" onclick="window.location.href='/mood-map/black'">Black</button>
-            <button class="filter-btn" id="yellow-btn" onclick="window.location.href='/mood-map/yellow'">Yellow</button>
-            <button class="filter-btn" id="green-btn" onclick="window.location.href='/mood-map/green'">Green</button>
+        <div class="main-content">
+            <div class="controls">
+                <div class="intensity-control">
+                    <div class="intensity-label">
+                        <span>Mood Intensity</span>
+                        <span id="intensity-value">5</span>
+                    </div>
+                    <input type="range" class="slider" id="moodIntensity" min="0" max="10" value="5">
+                </div>
+                <button class="recommend-btn" onclick="getRecommendations()">Get Recommendations</button>
+                <button class="playlist-btn" onclick="createPlaylist()">Create Playlist from Recommendations</button>
+            </div>
+
+            <div class="chart-container">
+                <div id="moodChart"></div>
+            </div>
         </div>
     </div>
 
-    <div class="slider-container">
-        <h3>Adjust Mood Intensity (0-10)</h3>
-        <input type="range" id="moodIntensity" min="0" max="10" value="5">
-        <p id="moodValue">5</p>
-
-        <form id="recommendForm" action="/recommend" method="GET">
-            <input type="hidden" name="cluster_id" value="{{ cluster_id }}">
-            <input type="hidden" name="intensity" id="intensityInput">
-            <button type="submit">Get Recommendations</button>
-        </form>
-    </div>
-
-    <div id="moodChart"></div>
-
     <div id="songModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h3>Spotify Player</h3>
-            <iframe id="spotifyIframe" src="" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
-            <h4>Give Feedback</h4>
-            <textarea id="commentBox" placeholder="Write a comment..."></textarea>
-            <br>
-            <button class="feedback-btn" style="background-color: #007bff; color: white; margin-top: 10px;" onclick="submitFeedback()">Submit Feedback</button>
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Now Playing</h2>
+            <iframe id="spotifyIframe" class="spotify-player" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <div class="features-chart">
+                <canvas id="radarChart"></canvas>
+            </div>
+            <div class="feedback-section">
+                <textarea class="feedback-input" id="commentBox" placeholder="Share your thoughts about this song..."></textarea>
+                <button class="submit-feedback" onclick="submitFeedback()">Submit Feedback</button>
+            </div>
         </div>
     </div>
 
     <div id="toast" class="toast">Feedback received!</div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        const allSongs = JSON.parse('{{ all_songs | tojson | safe }}');
+        let currentSongUri = "";
+        const currentClusterId = parseInt('{{ cluster_id }}');
+        let currentIntensity = 5;
+        let recommendedSongs = [];
+        let radarChart = null;
+
     document.getElementById("moodIntensity").oninput = function() {
-        document.getElementById("moodValue").innerText = this.value;
-        document.getElementById("intensityInput").value = this.value;
-    };
+            currentIntensity = parseInt(this.value);
+            document.getElementById("intensity-value").innerText = currentIntensity;
+        };
 
-    document.getElementById("recommendForm").onsubmit = function(event) {
-        let intensityValue = document.getElementById("moodIntensity").value;
-        document.getElementById("intensityInput").value = intensityValue;
-    };
+        function getRecommendations() {
+            const intensity = currentIntensity;
+            console.log("Getting recommendations with intensity:", intensity);
+            
+            fetch(`/api/recommend/${currentClusterId}?intensity=${intensity}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Received recommendations:", data);
+                    if (!data.songs || !Array.isArray(data.songs)) {
+                        throw new Error('Invalid response format');
+                    }
+                    recommendedSongs = data.songs;
+                    plot3D(recommendedSongs);
+                    document.querySelector('.playlist-btn').disabled = false;
+                    showToast("Recommendations updated!");
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showToast("Error getting recommendations. Please try again.");
+                });
+        }
 
-    let allSongs = {{ all_songs | tojson | safe }};
-    let currentSongUri = "";
-    let currentClusterId = {{ cluster_id }};
-    let currentIntensity = 5;
-    let currentScore = 0;
+        function createPlaylist() {
+            const playlistName = `Mood ${currentClusterId} - Intensity ${currentIntensity}`;
+            console.log("Creating playlist:", playlistName);
+            console.log("Track URIs:", recommendedSongs.map(song => song.uri));
+
+            fetch('http://127.0.0.1:8000/create-playlist', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: playlistName,
+                    tracks: recommendedSongs.map(song => song.uri)
+                }),
+                credentials: 'include'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Playlist created:", data);
+                showToast("Playlist created successfully!");
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showToast("Error creating playlist. Please try again.");
+            });
+        }
 
     function plot3D(songs) {
         let xValues = songs.map(song => song.PCA1);
@@ -94,8 +492,13 @@
         let zValues = songs.map(song => song.PCA3);
         let labels = songs.map(song => song.uri);
 
-        let colorMap = { "red": "red", "black": "black", "yellow": "yellow", "green": "green", "all": "gray" };
-        let selectedColor = colorMap["{{ mood_color }}"] || "gray";
+        let colorMap = {
+            "red": "#FF0000",
+            "black": "#000000",
+            "yellow": "#FFD700",
+            "green": "#00FF00"
+        };
+        let selectedColor = colorMap["{{ mood_color }}"] || "#999999";
 
         let trace = {
             x: xValues,
@@ -103,7 +506,15 @@
             z: zValues,
             text: labels,
             mode: 'markers',
-            marker: { size: 6, color: selectedColor, opacity: 0.8 },
+            marker: { 
+                size: 6,
+                color: selectedColor,
+                opacity: 0.8,
+                line: {
+                    color: selectedColor,
+                    width: 0.5
+                }
+            },
             type: 'scatter3d',
             hovertemplate: "<b>Song URI:</b> %{text}<extra></extra>"
         };
@@ -111,56 +522,200 @@
         let layout = {
             title: '3D Mood-Based Song Clusters',
             margin: { l: 0, r: 0, b: 0, t: 40 },
-            scene: { camera: { eye: { x: 1.5, y: 1.5, z: 1.5 } } }
+            scene: { 
+                camera: { eye: { x: 1.5, y: 1.5, z: 1.5 } },
+                xaxis: { 
+                    title: 'PCA1',
+                    backgroundcolor: 'rgba(0,0,0,0)',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    zerolinecolor: 'rgba(255,255,255,0.2)',
+                    showbackground: false
+                },
+                yaxis: { 
+                    title: 'PCA2',
+                    backgroundcolor: 'rgba(0,0,0,0)',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    zerolinecolor: 'rgba(255,255,255,0.2)',
+                    showbackground: false
+                },
+                zaxis: { 
+                    title: 'PCA3',
+                    backgroundcolor: 'rgba(0,0,0,0)',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    zerolinecolor: 'rgba(255,255,255,0.2)',
+                    showbackground: false
+                },
+                bgcolor: 'rgba(0,0,0,0)'
+            },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)'
         };
 
-        Plotly.newPlot('moodChart', [trace], layout);
+        Plotly.newPlot('moodChart', [trace], layout, {
+            displayModeBar: true,
+            responsive: true,
+            displaylogo: false,
+            modeBarButtonsToRemove: [
+                'toImage',
+                'sendDataToCloud',
+                'editInChartStudio',
+                'toggleHover',
+                'toggleSpikelines',
+                'hoverClosestCartesian',
+                'hoverCompareCartesian'
+            ]
+        });
 
         document.getElementById('moodChart').on('plotly_click', function(data) {
             const pointIndex = data.points[0].pointNumber;
-            currentSongUri = allSongs[pointIndex].uri;
-            currentScore = allSongs[pointIndex].weighted_score || 0;
-            currentIntensity = document.getElementById("moodIntensity").value;
+            const songUri = data.points[0].text;
+            const song = songs.find(s => s.uri === songUri);
+            
+            if (!song) {
+                console.error('Song not found:', songUri);
+                return;
+            }
+
+            currentSongUri = song.uri;
             const trackId = currentSongUri.split(':').pop();
+            
             document.getElementById('spotifyIframe').src = `https://open.spotify.com/embed/track/${trackId}`;
             document.getElementById('songModal').style.display = "flex";
+            
+            // Radar chart için verileri hazırla
+            const features = {
+                labels: ['Danceability', 'Energy', 'Valence', 'Tempo'],
+                datasets: [{
+                    label: 'Song Features',
+                    data: [
+                        song.danceability,
+                        song.energy,
+                        song.valence,
+                        song.tempo / 200
+                    ],
+                    backgroundColor: 'rgba(255, 99, 132, 0.4)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    pointBackgroundColor: 'rgb(255, 99, 132)',
+                    borderWidth: 3,
+                    pointRadius: 6,
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 8,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(255, 99, 132)'
+                }]
+            };
+
+            // Eğer önceki chart varsa yok et
+            if (radarChart) {
+                radarChart.destroy();
+            }
+
+            // Yeni radar chart oluştur
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            radarChart = new Chart(ctx, {
+                type: 'radar',
+                data: features,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            min: 0,
+                            max: 1,
+                            beginAtZero: true,
+                            backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.5)'
+                            },
+                            ticks: {
+                                display: true,
+                                backdropColor: 'transparent',
+                                color: 'rgba(255, 255, 255, 0.9)',
+                                z: 1,
+                                font: {
+                                    size: 12,
+                                    weight: '600'
+                                }
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 16,
+                                    family: 'Poppins',
+                                    weight: '600'
+                                },
+                                color: 'rgba(255, 255, 255, 0.9)'
+                            },
+                            angleLines: {
+                                color: 'rgba(255, 255, 255, 0.5)',
+                                lineWidth: 2
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
         });
     }
 
+    // İlk yükleme için mevcut şarkıları göster
     plot3D(allSongs);
 
     function closeModal() {
         document.getElementById('songModal').style.display = "none";
+            if (radarChart) {
+                radarChart.destroy();
+                radarChart = null;
+            }
     }
 
     function submitFeedback() {
-        let comment = document.getElementById("commentBox").value;
-        if (comment.trim() === "") {
-            showToast("Please write a comment before submitting.");
+        const comment = document.getElementById('commentBox').value.trim();
+        if (!comment) {
+            showToast("Please enter your feedback first.");
             return;
         }
-        fetch('https://moodbasedmusicrec-production.up.railway.app/feedback', {
+
+        fetch('/feedback', {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify({
-                song: currentSongUri,
-                comment: comment,
-                cluster_id: currentClusterId,
-                intensity: currentIntensity,
-                weighted_score: currentScore
-            }),
-            headers: { 'Content-Type': 'application/json' }
-        }).then(response => response.json())
-          .then(data => showToast(data.message));
-        document.getElementById("commentBox").value = "";
-        closeModal();
+                song_uri: currentSongUri,
+                comment: comment
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('commentBox').value = '';
+            showToast("Thank you for your feedback!");
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showToast("Error submitting feedback. Please try again.");
+        });
     }
 
     function showToast(message) {
         const toast = document.getElementById("toast");
         toast.innerText = message;
-        toast.className = "toast show";
-        setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
-    }
+            toast.classList.add("show");
+            setTimeout(() => { toast.classList.remove("show"); }, 3000);
+        }
+
+        function logout() {
+            window.location.href = '/logout';
+        }
     </script>
 </body>
 </html>

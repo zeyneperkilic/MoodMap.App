@@ -3,72 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pick Your Mood</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>MoodMap - Select Your Mood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #2c3e50, #3498db);
+            --accent-color: #e74c3c;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
-            text-align: center;
-            background: radial-gradient(circle at top left, #89f7fe, #66a6ff);
-            color: #333;
-            height: 100vh;
+            background: var(--primary-gradient);
+            color: var(--text-primary);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 0;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
         }
+
+        .background-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: patternShift 20s ease-in-out infinite;
+        }
+
+        @keyframes patternShift {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            max-height: 90vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0,0,0,0.2) transparent;
+        }
+
+        .container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 3px;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .back-btn:hover {
+            background: rgba(0,0,0,0.05);
+            transform: translateX(-3px);
+        }
+
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover svg {
+            transform: translateX(-3px);
+        }
+
         h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            animation: fadeInDown 0.8s ease-out;
         }
+
+        .mood-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
         .color-container {
             display: grid;
-            grid-template-columns: repeat(2, 140px);
-            grid-gap: 50px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 400px;
+            margin: 0 auto;
         }
-        .color-box {
-            width: 140px;
-            height: 140px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            border: 4px solid white;
-        }
-        .color-box:hover {
-            transform: scale(1.15);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-        }
-        #red { background-color: #ff0033; }      /* Daha canlı kırmızı */
-        #black { background-color: #1c1c1c; }    /* Daha derin siyah */
-        #yellow { background-color: #ffcc00; }   /* Parlak altın sarısı */
-        #green { background-color: #00cc88; }    /* Canlı zümrüt yeşili */
 
-        @media (max-width: 500px) {
+        .color-box {
+            aspect-ratio: 1;
+            width: 100%;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 4px solid white;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .color-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .color-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .color-box:hover::before {
+            opacity: 1;
+        }
+
+        .color-box:active {
+            transform: translateY(-5px);
+        }
+
+        #red { 
+            background: linear-gradient(45deg, #ff0033, #cc0029);
+            animation-delay: 0.3s;
+        }
+        #black { 
+            background: linear-gradient(45deg, #1c1c1c, #2c3e50);
+            animation-delay: 0.4s;
+        }
+        #yellow { 
+            background: linear-gradient(45deg, #ffcc00, #f39c12);
+            animation-delay: 0.5s;
+        }
+        #green { 
+            background: linear-gradient(45deg, #00cc88, #27ae60);
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .mood-description {
+                font-size: 1.1rem;
+            }
+
             .color-container {
-                grid-template-columns: 1fr 1fr;
-                grid-gap: 30px;
+                gap: 1.5rem;
+            }
+        }
+
+        .recommendations-container {
+            margin-top: 2rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .songs-list {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .song-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .song-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .song-info {
+            flex: 1;
+        }
+
+        .song-uri {
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .song-metrics {
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .song-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .song-actions button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .song-actions button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
-
-    <h2>Pick a color that fits your mood</h2>
-    <div class="color-container">
-        <div id="red" class="color-box" onclick="selectColor('red')"></div>
-        <div id="black" class="color-box" onclick="selectColor('black')"></div>
-        <div id="yellow" class="color-box" onclick="selectColor('yellow')"></div>
-        <div id="green" class="color-box" onclick="selectColor('green')"></div>
+    <div class="background-pattern"></div>
+    
+    <div class="container">
+        <button class="back-btn" onclick="window.location.href='/'">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" />
+            </svg>
+            Back to Home
+        </button>
+        
+        <h2>How are you feeling today?</h2>
+        <p class="mood-description">Select a color that resonates with your current mood</p>
+        
+        <div class="color-container">
+            <div class="color-box" id="red" onclick="window.location.href='http://127.0.0.1:5001/mood-map/red'"></div>
+            <div class="color-box" id="black" onclick="window.location.href='http://127.0.0.1:5001/mood-map/black'"></div>
+            <div class="color-box" id="yellow" onclick="window.location.href='http://127.0.0.1:5001/mood-map/yellow'"></div>
+            <div class="color-box" id="green" onclick="window.location.href='http://127.0.0.1:5001/mood-map/green'"></div>
+        </div>
     </div>
 
     <script>
-        function selectColor(color) {
-            window.location.href = `/mood-map/${color}`;
+        const COLOR_CLUSTER_MAPPING = {
+            'red': 1,    // energetic/intense cluster
+            'black': 0,  // deep/emotional cluster
+            'yellow': 2, // happy/upbeat cluster
+            'green': 3   // peaceful/calm cluster
+        };
+
+        async function selectColor(color) {
+            try {
+                // Varsayılan intensity değeri 5 olarak ayarlanmış
+                const response = await fetch(`http://127.0.0.1:8000/recommend/${COLOR_CLUSTER_MAPPING[color]}?intensity=5`);
+                const data = await response.json();
+                
+                if (data.songs && data.songs.length > 0) {
+                    // Önerileri göster
+                    displayRecommendations(data.songs, color);
+                } else {
+                    alert('No recommendations found for this mood.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error getting recommendations. Please try again.');
+            }
+        }
+
+        function displayRecommendations(songs, color) {
+            const container = document.querySelector('.container');
+            
+            // Mevcut renk kutularını kaldır
+            const colorContainer = document.querySelector('.color-container');
+            if (colorContainer) {
+                colorContainer.remove();
+            }
+
+            // Yeni içerik oluştur
+            const recommendationsHTML = `
+                <div class="recommendations-container">
+                    <h3>Your ${color} mood recommendations</h3>
+                    <div class="songs-list">
+                        ${songs.map(song => `
+                            <div class="song-item">
+                                <div class="song-info">
+                                    <span class="song-uri">${song.uri}</span>
+                                    <div class="song-metrics">
+                                        <span>Energy: ${(song.energy * 100).toFixed(1)}%</span>
+                                        <span>Valence: ${(song.valence * 100).toFixed(1)}%</span>
+                                        <span>Tempo: ${song.tempo.toFixed(1)}</span>
+                                        <span>Danceability: ${(song.danceability * 100).toFixed(1)}%</span>
+                                    </div>
+                                </div>
+                                <div class="song-actions">
+                                    <button onclick="provideFeedback('${song.uri}', true, ${COLOR_CLUSTER_MAPPING[color]}, 5)">👍</button>
+                                    <button onclick="provideFeedback('${song.uri}', false, ${COLOR_CLUSTER_MAPPING[color]}, 5)">👎</button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <button class="back-btn" onclick="resetSelection()">Choose Another Mood</button>
+                </div>
+            `;
+
+            container.insertAdjacentHTML('beforeend', recommendationsHTML);
+        }
+
+        async function provideFeedback(song, liked, cluster_id, intensity) {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/feedback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        song: song,
+                        liked: liked,
+                        cluster_id: cluster_id,
+                        intensity: intensity
+                    })
+                });
+                
+                if (response.ok) {
+                    alert(liked ? 'Thanks for the like!' : 'Thanks for the feedback!');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error saving feedback. Please try again.');
+            }
+        }
+
+        function resetSelection() {
+            window.location.reload();
         }
     </script>
-
 </body>
 </html>
