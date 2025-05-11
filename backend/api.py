@@ -17,6 +17,16 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from session import session_manager
 import spotipy
+from pydantic import BaseModel, Field
+from datetime import datetime, timedelta
+from typing import Optional
+
+PCA_WEIGHTS = {
+    "danceability": 0.28,
+    "energy":       0.27,
+    "valence":      0.31,
+    "tempo":        0.14
+}
 
 app = FastAPI()
 
@@ -37,9 +47,23 @@ app.add_middleware(
 )
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.join(current_dir, "processed_data.csv")
-data = pd.read_csv(file_path)
 
+# 1) Base ve pred CSV yolları
+base_csv = os.path.join(current_dir, "processed_data.csv")
+pred_csv = os.path.join(current_dir, "processed_data_with_sentiment.csv")
+
+# 2) DataFrame’leri yükle
+df_base = pd.read_csv(base_csv)
+df_pred = pd.read_csv(pred_csv)
+
+# 3) Sadece uri + pred_sentiment_1…pred_sentiment_10 al
+pred_cols     = ["uri"] + [f"pred_sentiment_{i}" for i in range(1, 11)]
+df_pred_small = df_pred[pred_cols]
+
+# 4) Merge: böylece base’deki tüm audio-özellikler bozulmadan kalır
+data = df_base.merge(df_pred_small, on="uri", how="left")
+
+# Özellikleri ölçekle ve kümele
 features = ['danceability', 'energy', 'valence', 'tempo']
 scaler = StandardScaler()
 data_scaled = scaler.fit_transform(data[features])
@@ -53,12 +77,12 @@ data['PCA1'] = pca_result[:, 0]
 data['PCA2'] = pca_result[:, 1]
 data['PCA3'] = pca_result[:, 2]
 
-feedback_file = "feedback.json"
-
+# Feedback dosyası (full path kullanmak da opsiyonel)
+feedback_file = os.path.join(current_dir, "feedback_data.json")
 try:
     with open(feedback_file, "r") as f:
         feedback_data = json.load(f)
-except:
+except FileNotFoundError:
     feedback_data = {}
 
 logging.basicConfig(filename='recommendation_check.log', level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -105,144 +129,152 @@ def get_cluster_songs(cluster_id: int):
 @app.get("/recommend/{cluster_id}")
 def recommend_songs(cluster_id: int, intensity: int = 5):
     try:
-        cluster_songs = data[data["Cluster"] == cluster_id].copy()
-        if cluster_songs.empty:
+        # 1) pull all tracks for this cluster
+        cluster_all = data[data["Cluster"] == cluster_id].copy()
+        if cluster_all.empty:
             return {"cluster": cluster_id, "songs": []}
 
-        # Sad cluster için ek filtreler (cluster 0 = sad)
+        # 2) apply your per‑cluster filtering
         if cluster_id == 0:
-            cluster_songs = cluster_songs[
-                (cluster_songs['energy'] < 0.7) &
-                (cluster_songs['valence'] < 0.7) &
-                (cluster_songs['tempo'] < 115) &
-                (cluster_songs['danceability'] < 0.7)
+            # Sad
+            filtered = cluster_all[
+                (cluster_all.energy < 0.7) &
+                (cluster_all.valence < 0.7) &
+                (cluster_all.tempo < 115) &
+                (cluster_all.danceability < 0.7)
             ]
-        # Diğer mood'lar için intensity bazlı filtreler
+        elif cluster_id == 3:
+            # Calm
+            max_tempo  = 120 - (intensity * 4)
+            max_energy = 1.0   - (intensity * 0.05)
+            filtered = cluster_all[
+                (cluster_all.tempo <= max_tempo) &
+                (cluster_all.energy <= max_energy)
+            ]
         else:
-            min_tempo = 60 + (intensity * 8)   # örneğin 5 intensity => min_tempo = 100
-            max_tempo = 180 - (intensity * 3)
+            # Happy (1) & Energetic (2)
+            min_tempo  = 60  + (intensity * 8)
+            max_tempo  = 180 - (intensity * 3)
             min_energy = intensity * 0.1
             max_energy = min(1.0, 0.6 + (intensity * 0.05))
-
-            cluster_songs = cluster_songs[
-                (cluster_songs['tempo'] >= min_tempo) &
-                (cluster_songs['tempo'] <= max_tempo) &
-                (cluster_songs['energy'] >= min_energy) &
-                (cluster_songs['energy'] <= max_energy)
+            filtered = cluster_all[
+                (cluster_all.tempo  >= min_tempo) &
+                (cluster_all.tempo  <= max_tempo) &
+                (cluster_all.energy >= min_energy) &
+                (cluster_all.energy <= max_energy)
             ]
 
-        ascending = intensity < 5
-        cluster_songs['weighted_score'] = (
-            0.4 * cluster_songs['energy'] +
-            0.3 * cluster_songs['valence'] +
-            0.2 * cluster_songs['danceability'] +
-            0.1 * cluster_songs['tempo']
+        # 3) fallback to full cluster if empty OR high‑intensity calm/energetic
+        if (filtered.empty
+            or (cluster_id == 3 and intensity >= 8)
+            or (cluster_id == 2 and intensity >= 10)
+        ):
+            fb = cluster_all.copy()
+            fb["weighted_score"] = (
+                PCA_WEIGHTS["energy"]       * fb.energy +
+                PCA_WEIGHTS["valence"]      * fb.valence +
+                PCA_WEIGHTS["danceability"] * fb.danceability +
+                PCA_WEIGHTS["tempo"]        * fb.tempo
+            )
+            # bring sentiment into 0–10 range
+            fb["model_sentiment"] = fb[f"pred_sentiment_{intensity}"].fillna(0) * 10
+            # blend 50/50
+            fb["combined_score"]  = 0.5 * fb["weighted_score"] + 0.5 * fb["model_sentiment"]
+
+            picks = fb.sample(n=min(10, len(fb))).copy()
+            recs = picks[[
+                "uri","PCA1","PCA2","PCA3",
+                "energy","valence","tempo","danceability",
+                "weighted_score","model_sentiment","combined_score"
+            ]].to_dict(orient="records")
+
+            return {"cluster": cluster_id, "songs": recs}
+
+        # 4) otherwise score the filtered set
+        filtered["weighted_score"] = (
+            PCA_WEIGHTS["energy"]       * filtered.energy +
+            PCA_WEIGHTS["valence"]      * filtered.valence +
+            PCA_WEIGHTS["danceability"] * filtered.danceability +
+            PCA_WEIGHTS["tempo"]        * filtered.tempo
         )
+        filtered["model_sentiment"] = filtered[f"pred_sentiment_{intensity}"].fillna(0) * 10
+        filtered["combined_score"]  = 0.5 * filtered["weighted_score"] + 0.5 * filtered["model_sentiment"]
 
-        cluster_songs = cluster_songs.sort_values(by='weighted_score', ascending=ascending)
-        top_songs = cluster_songs.head(50)
-        recommendations = top_songs.sample(n=min(10, len(top_songs)))[
-            ["uri", "PCA1", "PCA2", "PCA3", "energy", "valence", "tempo", "danceability"]
-        ].to_dict(orient="records")
+        # 5) sort & sample top 50 → 10
+        ascending    = True if cluster_id == 3 else (intensity < 5)
+        top50        = filtered.sort_values("combined_score", ascending=ascending).head(50)
+        picks        = top50.sample(n=min(10, len(top50))).copy()
 
-        log_weighted_check(cluster_id, intensity, recommendations)
-        return {"cluster": cluster_id, "songs": recommendations}
+        recs = picks[[
+            "uri","PCA1","PCA2","PCA3",
+            "energy","valence","tempo","danceability",
+            "weighted_score","model_sentiment","combined_score"
+        ]].to_dict(orient="records")
+
+        return {"cluster": cluster_id, "songs": recs}
 
     except Exception as e:
-        print(f"Error in recommend_songs: {e}")
-        raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
-
+        logging.error(f"Error in recommend_songs: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+    
 @app.post("/feedback")
 async def save_feedback(request: Request):
-    data = await request.json()
-    song = data.get("song", "Unknown")
-    liked = data.get("liked")
-    comment = data.get("comment", "")
-    cluster_id = data.get("cluster_id")
-    intensity = data.get("intensity")
-    weighted_score = data.get("weighted_score")
+    body = await request.json()
+    song           = body.get("song", "Unknown")
+    liked          = body.get("liked")
+    comment        = body.get("comment", "")
+    cluster_id     = body.get("cluster_id")
+    intensity      = body.get("intensity")
+    weighted_score = body.get("weighted_score")
 
-    if song not in feedback_data:
-        feedback_data[song] = {
-            "likes": 0,
-            "dislikes": 0,
-            "comments": [],
-            "sentiment": 0,
-            "cluster_id": cluster_id,
-            "intensity": intensity,
-            "weighted_score": weighted_score
-        }
-    else:
-        feedback_data[song]["cluster_id"] = cluster_id
-        feedback_data[song]["intensity"] = intensity
-        feedback_data[song]["weighted_score"] = weighted_score
-
+    entry = feedback_data.setdefault(song, {
+        "likes": 0, "dislikes": 0, "comments": [], "sentiment": 0,
+        "cluster_id": cluster_id, "intensity": intensity, "weighted_score": weighted_score
+    })
     if liked is True:
-        feedback_data[song]["likes"] += 1
+        entry["likes"] += 1
     elif liked is False:
-        feedback_data[song]["dislikes"] += 1
+        entry["dislikes"] += 1
 
     if comment:
-        feedback_data[song]["comments"].append(comment)
-        feedback_data[song]["sentiment"] = analyze_sentiment_vader(comment)
+        entry["comments"].append(comment)
+        entry["sentiment"] = SentimentIntensityAnalyzer().polarity_scores(comment)["compound"]
 
     with open(feedback_file, "w") as f:
         json.dump(feedback_data, f, indent=4)
-
     return {"message": f"Feedback received for {song}"}
 
 def analyze_sentiment_vader(text):
-    analyzer = SentimentIntensityAnalyzer()
-    sentiment_score = analyzer.polarity_scores(text)['compound']
-    return sentiment_score
+    return SentimentIntensityAnalyzer().polarity_scores(text)["compound"]
 
 @app.get("/spotify/login")
 async def spotify_login():
     try:
         auth_url = get_auth_url()
-        print(f"Generated Spotify auth URL: {auth_url}")
         return RedirectResponse(url=auth_url, status_code=303)
     except Exception as e:
-        print(f"Error in spotify_login: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/callback")
 async def spotify_callback(code: str = Query(None), request: Request = None):
     if not code:
         raise HTTPException(status_code=400, detail="No authorization code provided")
-    
-    try:
-        token_info = get_token_info(code)
-        print(f"Received token info: {token_info}")
-        
-        # Session'ı ayarla
-        response = RedirectResponse(url="http://127.0.0.1:5001/mood-selection", status_code=303)
-        session_manager.set_session(response, {"token_info": token_info})
-        
-        return response
-    except Exception as e:
-        print(f"Callback error: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+    token_info = get_token_info(code)
+    resp = RedirectResponse(url="http://127.0.0.1:5001/mood-selection", status_code=303)
+    session_manager.set_session(resp, {"token_info": token_info})
+    return resp
 
 @app.get("/spotify/me")
 async def get_spotify_user(request: Request):
-    session_data = session_manager.get_session(request)
-    token_info = session_data.get("token_info")
-    
+    sess       = session_manager.get_session(request)
+    token_info = sess.get("token_info")
     if not token_info:
         raise HTTPException(status_code=401, detail="No token info in session")
-    
-    try:
-        token_info = refresh_token_if_expired(token_info)
-        response = JSONResponse(content={"message": "Success"})
-        session_manager.set_session(response, {"token_info": token_info})
-        
-        sp = get_spotify_client(token_info)
-        user_info = sp.current_user()
-        return response
-    except Exception as e:
-        print(f"Error getting user info: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+    token_info = refresh_token_if_expired(token_info)
+    response   = JSONResponse(content={"message": "Success"})
+    session_manager.set_session(response, {"token_info": token_info})
+    return response
+
 
 # Renk ve duygu eşleştirmeleri
 COLOR_MOOD_MAPPING = {
@@ -381,6 +413,16 @@ async def create_playlist(request: Request):
             print("Missing playlist name or tracks")
             return {"success": False, "message": "Missing playlist name or tracks"}
 
+        # Parse mood and intensity from playlist name
+        # Expected format: "Mood X - Intensity Y"
+        try:
+            mood = int(playlist_name.split(" ")[1])
+            intensity = int(playlist_name.split(" ")[-1])
+        except:
+            print("Could not parse mood and intensity from playlist name")
+            mood = 0
+            intensity = 5
+
         # Refresh token if expired
         try:
             token_info = refresh_token_if_expired(token_info)
@@ -422,6 +464,19 @@ async def create_playlist(request: Request):
         try:
             sp.playlist_add_items(playlist["id"], track_uris)
             print("Tracks added to playlist successfully")
+            
+            # Save mood history entry
+            if user_id not in mood_history:
+                mood_history[user_id] = []
+            
+            entry = MoodEntry(
+                user_id=user_id,
+                mood=mood,
+                intensity=intensity,
+                playlist_id=playlist["id"]
+            )
+            mood_history[user_id].append(entry)
+            
         except Exception as e:
             print(f"Error adding tracks to playlist: {str(e)}")
             return {"success": False, "message": f"Failed to add tracks to playlist: {str(e)}"}
@@ -458,6 +513,84 @@ async def logout(request: Request):
                 "Access-Control-Allow-Credentials": "true"
             }
         )
+
+# Mood history için yeni model
+class MoodEntry(BaseModel):
+    user_id: str
+    mood: int
+    intensity: int
+    timestamp: datetime = Field(default_factory=datetime.now)
+    playlist_id: Optional[str] = None
+
+# Mood history için in-memory storage (gerçek uygulamada veritabanı kullanılmalı)
+mood_history = {}
+
+@app.post("/mood-history/add")
+async def add_mood_entry(token_info: dict = Depends(get_token_info)):
+    """Kullanıcının mood geçmişine yeni bir kayıt ekler"""
+    try:
+        sp = get_spotify_client(token_info)
+        user_id = sp.current_user()["id"]
+        
+        if user_id not in mood_history:
+            mood_history[user_id] = []
+        
+        # Son 24 saat içindeki mood'ları say
+        today = datetime.now()
+        daily_entries = sum(1 for entry in mood_history[user_id] 
+                          if (today - entry.timestamp).days < 1)
+        
+        if daily_entries >= 5:
+            raise HTTPException(
+                status_code=400,
+                detail="Maximum 5 mood entries per day allowed"
+            )
+        
+        entry = MoodEntry(
+            user_id=user_id,
+            mood=mood,
+            intensity=intensity,
+            playlist_id=playlist_id
+        )
+        mood_history[user_id].append(entry)
+        return {"status": "success"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/mood-history")
+async def get_mood_history(request: Request):
+    """Kullanıcının mood geçmişini döndürür"""
+    try:
+        session_data = session_manager.get_session(request)
+        token_info = session_data.get("token_info")
+        
+        if not token_info:
+            raise HTTPException(status_code=401, detail="Not authenticated")
+            
+        token_info = refresh_token_if_expired(token_info)
+        sp = get_spotify_client(token_info)
+        user_id = sp.current_user()["id"]
+        
+        if user_id not in mood_history:
+            return {"history": []}
+        
+        # Son 30 günlük geçmişi döndür
+        thirty_days_ago = datetime.now() - timedelta(days=30)
+        recent_history = [
+            {
+                "mood": entry.mood,
+                "intensity": entry.intensity,
+                "timestamp": entry.timestamp.isoformat(),
+                "playlist_id": entry.playlist_id
+            }
+            for entry in mood_history[user_id]
+            if entry.timestamp > thirty_days_ago
+        ]
+        
+        return {"history": recent_history}
+    except Exception as e:
+        print(f"Error getting mood history: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -1,26 +1,30 @@
 import requests
 
-def test_recommendation(cluster_id, intensity):
-    url = f"http://localhost:8000/recommend/{cluster_id}?intensity={intensity}"
-    try:
-        response = requests.get(url)
-        if response.status_code == 200:
-            data = response.json()
-            songs = data.get('songs', [])
-            print(f"✅ Cluster {cluster_id}, Intensity {intensity} - {len(songs)} şarkı önerildi.")
-            if len(songs) == 0:
-                print("⚠️  Uyarı: Hiç şarkı dönmedi!")
-        else:
-            print(f"❌ Hata: Status code {response.status_code} - {response.text}")
-    except Exception as e:
-        print(f"❌ İstek sırasında hata oluştu: {str(e)}")
+API = "http://localhost:8000"
 
-def run_tests():
-    print("------ Öneri API Testleri Başlıyor ------")
-    for cluster_id in range(4):  # Cluster 0, 1, 2, 3
-        for intensity in [1, 5, 10]:
-            test_recommendation(cluster_id, intensity)
-    print("------ Testler Tamamlandı ------")
+def test_recommendations():
+    failures = []
+    for cluster in range(4):
+        for intensity in (1, 5, 10):
+            resp = requests.get(f"{API}/recommend/{cluster}", params={"intensity": intensity})
+            if resp.status_code != 200:
+                failures.append(f"HTTP {resp.status_code} for cluster={cluster},intensity={intensity}")
+                continue
+            data = resp.json()
+            n = len(data.get("songs", []))
+            # expect at least 1, ideally 10
+            if n == 0:
+                failures.append(f"No songs returned for cluster={cluster},intensity={intensity}")
+            else:
+                print(f"✅ Cluster {cluster}, Intensity {intensity} → {n} songs")
 
-if __name__ == "__main__":
-    run_tests()
+    if failures:
+        print("\n❌ Failures:")
+        for f in failures:
+            print("  -", f)
+        raise SystemExit(1)
+    else:
+        print("\n🎉 All recommendation tests passed!")
+
+if __name__=="__main__":
+    test_recommendations()

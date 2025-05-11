@@ -1,0 +1,62 @@
+{
+    "1": {
+        "danceability": 3.6095,
+        "energy": 3.0667,
+        "valence": 1.7116,
+        "tempo": -0.0097
+    },
+    "2": {
+        "danceability": 3.5032,
+        "energy": 2.7312,
+        "valence": 1.9832,
+        "tempo": -0.0123
+    },
+    "3": {
+        "danceability": 4.0617,
+        "energy": 3.0895,
+        "valence": 1.402,
+        "tempo": -0.0133
+    },
+    "4": {
+        "danceability": 4.1019,
+        "energy": 3.0998,
+        "valence": 1.2392,
+        "tempo": -0.0135
+    },
+    "5": {
+        "danceability": 4.1611,
+        "energy": 3.1027,
+        "valence": 1.2729,
+        "tempo": -0.0149
+    },
+    "6": {
+        "danceability": 3.9171,
+        "energy": 3.0869,
+        "valence": 1.4859,
+        "tempo": -0.015
+    },
+    "7": {
+        "danceability": 3.7516,
+        "energy": 3.0202,
+        "valence": 1.5927,
+        "tempo": -0.0162
+    },
+    "8": {
+        "danceability": 3.8994,
+        "energy": 3.2471,
+        "valence": 1.3151,
+        "tempo": -0.0174
+    },
+    "9": {
+        "danceability": 3.6847,
+        "energy": 3.7264,
+        "valence": 0.8167,
+        "tempo": -0.0182
+    },
+    "10": {
+        "danceability": 3.9965,
+        "energy": 3.4408,
+        "valence": 0.9408,
+        "tempo": -0.0178
+    }
+}

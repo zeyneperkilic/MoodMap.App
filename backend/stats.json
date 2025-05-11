@@ -1,0 +1,20 @@
+{
+  "version": "local",
+  "timestamp": "2025-04-25T14:09:29.582921Z",
+  "spearman_weighted": 0.814433872946565,
+  "spearman_combined": 0.9337270803763511,
+  "delta_rho": 0.11929320742978611,
+  "delta_ci": [
+    0.015197434894688564,
+    0.3325854530202953
+  ],
+  "p_value": 0.48,
+  "spearman_combined_cluster0": 0.5797710356524484,
+  "spearman_combined_cluster1": 0.8999999999999998,
+  "spearman_combined_cluster2": 0.9746794344808964,
+  "spearman_combined_5": 0.9999999999999999,
+  "spearman_combined_6": 1.0,
+  "spearman_combined_7": 0.9999999999999999,
+  "spearman_combined_8": 1.0,
+  "spearman_combined_9": 1.0
+}

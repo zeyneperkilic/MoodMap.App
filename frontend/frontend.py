@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect, Response
 import requests
 import os
-import secrets  # Add this import for generating secure secret key
+import secrets  
 
 app = Flask(__name__)
-app.secret_key = secrets.token_hex(16)  # Generate a secure random secret key
+app.secret_key = secrets.token_hex(16)  
 
 API_URL = "http://localhost:8000"
 
@@ -60,6 +60,11 @@ def spotify_login():
 def logout():
     response = requests.post(f"{API_URL}/logout", cookies=request.cookies)
     return redirect('/')
+
+@app.route('/mood-history')
+def mood_history():
+    """Mood history sayfasını göster"""
+    return render_template('mood_history.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)

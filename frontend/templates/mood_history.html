@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Mood History - MoodMap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, 
+                #FF6B6B,
+                #4ECDC4,
+                #45B7D1,
+                #96C3EB,
+                #C7CEEA,
+                #FF9A9E
+            );
+            --accent-gradient: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--primary-gradient);
+            background-size: 400% 400%;
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto 0 auto;
+            position: relative;
+            z-index: 2;
+            background: rgba(30,34,45,0.96);
+            border-radius: 32px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+            padding: 2.5rem 2rem 3rem 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(44,62,80,0.18);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            justify-content: center;
+        }
+
+        .stat-card {
+            flex: 1;
+            min-width: 180px;
+            background: rgba(44, 62, 80, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            padding: 2rem 1.2rem 1.2rem 1.2rem;
+            text-align: center;
+            box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.08), 0 0 0 1px #e0e3ea inset;
+            border: none;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.18);
+        }
+        .stat-value {
+            font-size: 2.3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-shadow: 0 1px 4px rgba(180,180,180,0.08);
+        }
+        .stat-label {
+            font-size: 1.1rem;
+            color: #bfc9d1;
+            font-weight: 500;
+        }
+
+        .chart-row {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .chart-container {
+            background: rgba(44, 62, 80, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.08), 0 0 0 1px #e0e3ea inset;
+            border: none;
+            flex: 1;
+            min-width: 320px;
+        }
+        .chart-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            text-align: left;
+            color: #fff;
+            text-shadow: 0 1px 4px rgba(180,180,180,0.08);
+            font-weight: 700;
+        }
+        canvas {
+            width: 100% !important;
+            height: 320px !important;
+            margin-bottom: 0;
+        }
+
+        .mood-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+        .mood-entry {
+            display: flex;
+            align-items: stretch;
+            background: rgba(44, 62, 80, 0.98);
+            box-shadow: 0 2px 12px 0 rgba(44, 62, 80, 0.06), 0 0 0 1px #e0e3ea inset;
+            backdrop-filter: blur(10px);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1.5px solid rgba(44,62,80,0.06);
+            transition: box-shadow 0.2s;
+        }
+        .mood-entry:hover {
+            box-shadow: 0 6px 24px 0 rgba(44, 62, 80, 0.16);
+        }
+        .mood-color-bar {
+            width: 10px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #FFD700, #00FF00);
+        }
+        .mood-info {
+            flex: 1;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .mood-date {
+            font-size: 1rem;
+            color: #bfc9d1;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        .mood-details {
+            font-size: 1.1rem;
+            color: #fff;
+            text-shadow: 0 1px 4px rgba(180,180,180,0.08);
+            font-weight: 600;
+        }
+        .playlist-link {
+            align-self: center;
+            margin: 0 1.5rem 0 0;
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(90deg, #1DB954, #1ed760);
+            color: #fff;
+            border-radius: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 8px 0 rgba(29, 185, 84, 0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+            border: none;
+            font-size: 1rem;
+        }
+        .playlist-link:hover {
+            background: linear-gradient(90deg, #1ed760, #1DB954);
+            box-shadow: 0 4px 16px 0 rgba(29, 185, 84, 0.18);
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                padding: 1rem;
+            }
+            .stats-container, .chart-row {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+            .chart-container {
+                min-width: 0;
+            }
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 0.5rem;
+            }
+            .stat-card {
+                padding: 1.2rem 0.7rem 0.7rem 0.7rem;
+            }
+            .chart-container {
+                padding: 1rem 0.5rem 0.5rem 0.5rem;
+            }
+            .mood-info {
+                padding: 0.7rem 0.7rem;
+            }
+            .playlist-link {
+                margin: 0 0.7rem 0 0;
+                font-size: 0.95rem;
+            }
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-btn" style="position:absolute;top:32px;right:48px;z-index:10;padding:0.7rem 1.5rem;background:#3498db;color:#fff;border-radius:10px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(44,62,80,0.10);border:2px solid #2980b9;transition:background 0.2s,box-shadow 0.2s;display:inline-block;">
+        &#8592; Back
+    </a>
+    <div class="container">
+        <div class="header">
+            <h1>Your Mood Journey</h1>
+            <p>Track how your musical moods have evolved over time</p>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value" id="total-entries">0</div>
+                <div class="stat-label">Total Mood Entries</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="avg-intensity">0</div>
+                <div class="stat-label">Average Intensity</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="last-mood">-</div>
+                <div class="stat-label">Last Mood</div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2 class="chart-title">Mood Intensity Over Time</h2>
+            <canvas id="moodChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h2 class="chart-title">Mood Distribution</h2>
+            <canvas id="moodDistribution"></canvas>
+        </div>
+
+        <div class="mood-list" id="moodList">
+            <!-- Mood entries will be populated here -->
+        </div>
+    </div>
+
+    <script>
+        // Mood numarasını isme çeviren mapping
+        const MOOD_NAMES = {
+            0: 'Sad',
+            1: 'Happy',
+            2: 'Energetic',
+            3: 'Calm'
+        };
+        // Fetch mood history data
+        async function fetchMoodHistory() {
+            try {
+                const response = await fetch('/api/mood-history', {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        window.location.href = '/login';
+                        return [];
+                    }
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                return data.history;
+            } catch (error) {
+                console.error('Error fetching mood history:', error);
+                return [];
+            }
+        }
+
+        // Update statistics
+        function updateStats(history) {
+            document.getElementById('total-entries').textContent = history.length;
+            
+            const avgIntensity = history.reduce((sum, entry) => sum + entry.intensity, 0) / history.length;
+            document.getElementById('avg-intensity').textContent = avgIntensity.toFixed(1);
+            
+            if (history.length > 0) {
+                const lastMood = history[history.length - 1].mood;
+                document.getElementById('last-mood').textContent = MOOD_NAMES[lastMood] || `Mood ${lastMood}`;
+            } else {
+                document.getElementById('last-mood').textContent = '-';
+            }
+        }
+
+        // Create mood intensity chart
+        function createMoodChart(history) {
+            const ctx = document.getElementById('moodChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: history.map(entry => new Date(entry.timestamp).toLocaleDateString()),
+                    datasets: [{
+                        label: 'Mood Intensity',
+                        data: history.map(entry => entry.intensity),
+                        borderColor: '#FF6B6B',
+                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 10,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.8)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.8)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(255, 255, 255, 0.8)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Create mood distribution chart
+        function createDistributionChart(history) {
+            const moodCounts = history.reduce((acc, entry) => {
+                const moodName = MOOD_NAMES[entry.mood] || `Mood ${entry.mood}`;
+                acc[moodName] = (acc[moodName] || 0) + 1;
+                return acc;
+            }, {});
+
+            const ctx = document.getElementById('moodDistribution').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(moodCounts),
+                    datasets: [{
+                        label: 'Count',
+                        data: Object.values(moodCounts),
+                        backgroundColor: [
+                            '#FF6B6B', // Happy
+                            '#4ECDC4', // Calm
+                            '#FFD700', // Energetic
+                            '#45B7D1'  // Sad
+                        ],
+                        borderRadius: 16,
+                        borderSkipped: false,
+                        hoverBackgroundColor: [
+                            '#ff8787', // Happy hover
+                            '#6fffe9', // Calm hover
+                            '#ffe066', // Energetic hover
+                            '#7fd8f6'  // Sad hover
+                        ]
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Yatay çubuk
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#222C36',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: '#fff',
+                            borderWidth: 2,
+                            padding: 12
+                        },
+                        title: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255,255,255,0.08)' },
+                            ticks: { color: '#fff', font: { size: 16, weight: 'bold' } }
+                        },
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.08)' },
+                            ticks: { color: '#fff', font: { size: 18, weight: 'bold' } }
+                        }
+                    },
+                    animation: {
+                        duration: 1200,
+                        easing: 'easeOutBounce'
+                    }
+                }
+            });
+        }
+
+        // Populate mood list
+        function populateMoodList(history) {
+            const moodList = document.getElementById('moodList');
+            moodList.innerHTML = history
+                .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+                .map(entry => `
+                    <div class="mood-entry">
+                        <div class="mood-info">
+                            <div class="mood-date">${new Date(entry.timestamp).toLocaleString()}</div>
+                            <div class="mood-details">
+                                <b>${MOOD_NAMES[entry.mood] || `Mood ${entry.mood}`}</b> – Intensity ${entry.intensity}
+                            </div>
+                        </div>
+                        ${entry.playlist_id ? `
+                            <a href="https://open.spotify.com/playlist/${entry.playlist_id}" 
+                               target="_blank" 
+                               class="playlist-link">
+                                View Playlist
+                            </a>
+                        ` : ''}
+                    </div>
+                `).join('');
+        }
+
+        // Initialize everything
+        async function initialize() {
+            const history = await fetchMoodHistory();
+            if (history.length > 0) {
+                updateStats(history);
+                createMoodChart(history);
+                createDistributionChart(history);
+                populateMoodList(history);
+            }
+        }
+
+        // Start the app
+        initialize();
+    </script>
+</body>
+</html> 

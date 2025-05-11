@@ -248,25 +248,22 @@
             position: absolute;
             font-size: 2.5rem;
             opacity: 0;
-            animation: floatNote 10s linear infinite;
-            color: rgba(255, 255, 255, 0.8);
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-            z-index: 1;
+            animation: floatNote 4s ease-in-out infinite;
         }
 
         @keyframes floatNote {
             0% {
-                transform: translate(var(--startX), 120vh) rotate(0deg);
+                transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
-            10% {
-                opacity: 1;
+            20% {
+                opacity: 0.8;
             }
-            90% {
-                opacity: 1;
+            80% {
+                opacity: 0.8;
             }
             100% {
-                transform: translate(var(--endX), -20vh) rotate(360deg);
+                transform: translateY(-100px) rotate(360deg);
                 opacity: 0;
             }
         }
@@ -274,7 +271,7 @@
         @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
@@ -285,7 +282,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -296,27 +293,80 @@
         @keyframes expandLine {
             from {
                 width: 0;
-                opacity: 0;
             }
             to {
                 width: 100px;
-                opacity: 1;
             }
         }
 
         @keyframes patternShift {
-            0% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(5deg); }
-            100% { transform: scale(1) rotate(0deg); }
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(5deg);
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .wave-effect {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="rgba(255,255,255,0.1)"></path></svg>');
+            background-size: cover;
+            animation: wave 10s linear infinite;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .social-links {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 3;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         @media (max-width: 768px) {
             .glass-container {
                 padding: 2rem;
+                margin: 1rem;
             }
             
             h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             p {
@@ -324,74 +374,62 @@
             }
             
             .start-btn, .spotify-btn {
-                padding: 1.2rem 2.5rem;
-                font-size: 1.1rem;
-            }
-
-            .logo {
-                font-size: 2.5rem;
+                padding: 1rem 2rem;
+                font-size: 1rem;
             }
         }
     </style>
-    <script>
-        function redirectToSpotify() {
-            window.location.href = '/spotify/login';
-        }
-
-        // Dinamik müzik notaları oluşturma
-        function createFloatingNotes() {
-            const notes = ['🎵', '🎶', '🎼', '🎷', '🎺', '🎸', '🎻', '🎤', '🎧', '🥁'];
-            const container = document.querySelector('.floating-notes');
-            
-            setInterval(() => {
-                const note = document.createElement('div');
-                note.className = 'music-note';
-                note.textContent = notes[Math.floor(Math.random() * notes.length)];
-                
-                const startX = Math.random() * window.innerWidth;
-                const endX = startX + (Math.random() - 0.5) * 200;
-                
-                note.style.setProperty('--startX', `${startX}px`);
-                note.style.setProperty('--endX', `${endX}px`);
-                note.style.left = '0';
-                note.style.top = '0';
-                
-                container.appendChild(note);
-                
-                // Animasyon bittikten sonra notayı kaldır
-                setTimeout(() => {
-                    note.remove();
-                }, 10000);
-            }, 1000);
-        }
-
-        // Sayfa yüklendiğinde notaları başlat
-        window.addEventListener('load', createFloatingNotes);
-    </script>
 </head>
 <body>
-    <div class="aura-effect"></div>
     <div class="background-pattern"></div>
-    <div class="floating-notes"></div>
+    <div class="aura-effect"></div>
+    <div class="wave-effect"></div>
     
     <div class="glass-container">
         <div class="content-wrapper">
             <div class="logo">MoodMap</div>
-            <h1>Discover Your Perfect Soundtrack</h1>
-            <p>Experience music that resonates with your emotions. Let your mood guide you through a personalized musical journey.</p>
+            <h1>Discover Music That Matches Your Mood</h1>
+            <p>Let your emotions guide you through a personalized musical journey. Connect with Spotify and explore playlists that perfectly match your current vibe.</p>
+            
             <div class="button-container">
-                <button class="start-btn" onclick="window.location.href='http://127.0.0.1:8000/mood_selection'">
-                    Begin Your Journey
-                    <span>→</span>
-                </button>
-                <button class="spotify-btn" onclick="redirectToSpotify()">
-                    <svg class="spotify-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <a href="/mood-selection" class="start-btn">
+                    Start Your Journey
+                </a>
+                <a href="/spotify/login" class="spotify-btn">
+                    <svg class="spotify-icon" viewBox="0 0 24 24">
                         <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
                     </svg>
-                    Login with Spotify
-                </button>
+                    Connect with Spotify
+                </a>
             </div>
         </div>
     </div>
+
+    <div class="floating-notes">
+        <div class="music-note" style="left: 10%; animation-delay: 0s;">♪</div>
+        <div class="music-note" style="left: 30%; animation-delay: 1s;">♫</div>
+        <div class="music-note" style="left: 50%; animation-delay: 2s;">♪</div>
+        <div class="music-note" style="left: 70%; animation-delay: 3s;">♫</div>
+        <div class="music-note" style="left: 90%; animation-delay: 4s;">♪</div>
+    </div>
+
+    <div class="social-links">
+        <a href="#" class="social-link">📱</a>
+        <a href="#" class="social-link">💻</a>
+        <a href="#" class="social-link">📧</a>
+    </div>
+
+    <script>
+        // Add floating notes dynamically
+        const floatingNotes = document.querySelector('.floating-notes');
+        for (let i = 0; i < 10; i++) {
+            const note = document.createElement('div');
+            note.className = 'music-note';
+            note.style.left = `${Math.random() * 100}%`;
+            note.style.animationDelay = `${Math.random() * 5}s`;
+            note.textContent = Math.random() > 0.5 ? '♪' : '♫';
+            floatingNotes.appendChild(note);
+        }
+    </script>
 </body>
 </html>

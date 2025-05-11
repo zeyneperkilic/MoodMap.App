@@ -7,10 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #2c3e50, #3498db);
-            --accent-color: #e74c3c;
-            --text-primary: #2c3e50;
-            --text-secondary: #7f8c8d;
+            --primary-gradient: linear-gradient(135deg, 
+                #FF6B6B,
+                #4ECDC4,
+                #45B7D1,
+                #96C3EB,
+                #C7CEEA,
+                #FF9A9E
+            );
+            --accent-gradient: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.9);
         }
 
         * {
@@ -22,6 +29,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--primary-gradient);
+            background-size: 400% 400%;
             color: var(--text-primary);
             min-height: 100vh;
             display: flex;
@@ -31,16 +39,28 @@
             padding: 2rem;
             position: relative;
             overflow: hidden;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .background-pattern {
             position: absolute;
             width: 100%;
             height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%),
+                radial-gradient(circle at 0% 100%, rgba(255,107,107,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 100% 0%, rgba(78,205,196,0.3) 0%, transparent 50%);
             animation: patternShift 20s ease-in-out infinite;
+            z-index: 1;
+            mix-blend-mode: soft-light;
         }
 
         @keyframes patternShift {
@@ -54,28 +74,18 @@
             z-index: 2;
             max-width: 600px;
             width: 90%;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            max-height: 90vh;
-            overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(0,0,0,0.2) transparent;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            height: auto;
+            overflow: visible;
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .container::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .container::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .container::-webkit-scrollbar-thumb {
-            background-color: rgba(0,0,0,0.2);
-            border-radius: 3px;
+            display: none;
         }
 
         .back-btn {
@@ -97,7 +107,7 @@
         }
 
         .back-btn:hover {
-            background: rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.1);
             transform: translateX(-3px);
         }
 
@@ -121,9 +131,9 @@
         }
 
         .mood-description {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             text-align: center;
             animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
@@ -131,7 +141,7 @@
         .color-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
             max-width: 400px;
             margin: 0 auto;
         }
@@ -139,11 +149,11 @@
         .color-box {
             aspect-ratio: 1;
             width: 100%;
-            border-radius: 20px;
+            border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            border: 4px solid white;
+            border: 3px solid white;
             position: relative;
             overflow: hidden;
             animation: fadeInUp 0.8s ease-out backwards;

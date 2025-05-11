@@ -8,12 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #2c3e50, #3498db);
-            --accent-gradient: linear-gradient(45deg, #e74c3c, #c0392b);
-            --text-primary: #2c3e50;
-            --text-secondary: #7f8c8d;
-            --card-bg: rgba(255, 255, 255, 0.95);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --primary-gradient: linear-gradient(135deg, 
+                #FF6B6B,
+                #4ECDC4,
+                #45B7D1,
+                #96C3EB,
+                #C7CEEA,
+                #FF9A9E
+            );
+            --accent-gradient: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.9);
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
         * {
@@ -24,22 +31,39 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, 
+                #FF6B6B,
+                #4ECDC4,
+                #45B7D1,
+                #96C3EB,
+                #C7CEEA,
+                #FF9A9E
+            );
             color: var(--text-primary);
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
         }
 
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .background-pattern {
             position: fixed;
             width: 100%;
             height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%),
+                radial-gradient(circle at 0% 100%, rgba(255,107,107,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 100% 0%, rgba(78,205,196,0.3) 0%, transparent 50%);
             animation: patternShift 20s ease-in-out infinite;
             z-index: 0;
+            mix-blend-mode: soft-light;
         }
 
         .container {
@@ -56,9 +80,11 @@
             align-items: center;
             margin-bottom: 2rem;
             background: var(--card-bg);
+            backdrop-filter: blur(10px);
             padding: 1.5rem;
             border-radius: 20px;
             box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .header-buttons {
@@ -67,16 +93,46 @@
             align-items: center;
         }
 
-        .logout-btn {
+        .back-home-btn {
             padding: 0.5rem 1rem;
-            background: #e74c3c;
+            background: #3498db;
             color: white;
-            border: none;
+            border: 2px solid #000000;
             border-radius: 8px;
             font-size: 0.9rem;
             font-weight: 500;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .back-home-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .logout-btn {
+            padding: 0.5rem 1rem;
+            background: #e74c3c;
+            color: white;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .logout-btn:hover {
@@ -88,10 +144,11 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            border: none;
+            border: 2px solid #000000;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             opacity: 1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         #red-btn { background: #FF0000; }
@@ -113,9 +170,8 @@
         .mood-title {
             font-size: 2.5rem;
             font-weight: 700;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .color-buttons {
@@ -132,9 +188,11 @@
 
         .controls {
             background: var(--card-bg);
+            backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 20px;
             box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .intensity-control {
@@ -146,6 +204,8 @@
             justify-content: space-between;
             margin-bottom: 1rem;
             font-weight: 500;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .slider {
@@ -155,6 +215,7 @@
             background: #e0e0e0;
             border-radius: 4px;
             outline: none;
+            border: 1px solid #000000;
         }
 
         .slider::-webkit-slider-thumb {
@@ -165,6 +226,7 @@
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: 2px solid #000000;
         }
 
         .recommend-btn {
@@ -172,12 +234,14 @@
             padding: 1rem;
             background: var(--accent-gradient);
             color: white;
-            border: none;
+            border: 2px solid #000000;
             border-radius: 10px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .recommend-btn:hover {
@@ -190,13 +254,15 @@
             padding: 1rem;
             background: linear-gradient(45deg, #1DB954, #1ed760);
             color: white;
-            border: none;
+            border: 2px solid #000000;
             border-radius: 10px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-top: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .playlist-btn:hover {
@@ -211,12 +277,38 @@
             box-shadow: none;
         }
 
+        .mood-chart-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+            color: white;
+            border: 2px solid #000000;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 1rem;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .mood-chart-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(155, 89, 182, 0.3);
+        }
+
         .chart-container {
             background: var(--card-bg);
+            backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 20px;
             box-shadow: var(--shadow);
             height: 600px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         #moodChart {
@@ -231,7 +323,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(44, 62, 80, 0.6);
             z-index: 1000;
             justify-content: center;
             align-items: center;
@@ -239,14 +331,17 @@
 
         .modal-content {
             background: var(--card-bg);
+            backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 20px;
+            max-width: 900px;
             width: 90%;
-            max-width: 500px;
-            position: relative;
+            max-height: 95vh;
+            overflow-y: visible;
             box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            position: relative;
         }
-
         .close-modal {
             position: absolute;
             top: 1rem;
@@ -262,10 +357,12 @@
         }
 
         .song-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
             margin: 1rem 0;
+            justify-content: center;
+            align-items: flex-start;
         }
 
         .spotify-player {
@@ -276,47 +373,28 @@
         }
 
         .features-chart {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            background: #fff;
             border-radius: 15px;
-            padding: 1rem;
-            height: 300px;
-            grid-column: 1 / -1;
+            padding: 1.5rem 1rem 1rem 1.5rem;
+            height: 320px;
+            width: 320px;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: var(--shadow);
         }
 
-        .feedback-section {
-            margin-top: 1rem;
-        }
-
-        .feedback-input {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-family: 'Poppins', sans-serif;
-            resize: none;
-            margin-bottom: 1rem;
-        }
-
-        .submit-feedback {
-            width: 100%;
-            padding: 1rem;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .submit-feedback:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+        .compare-bar-chart {
+            background: #fff;
+            border-radius: 15px;
+            padding: 1.5rem 1rem 1rem 1.5rem;
+            height: 320px;
+            width: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            margin-top: 0;
         }
 
         .toast {
@@ -358,6 +436,21 @@
                 font-size: 2rem;
             }
         }
+
+        .song-3d-map {
+            background: #fff;
+            border-radius: 15px;
+            padding: 1.5rem 1rem 1rem 1.5rem;
+            height: 320px;
+            width: 320px;
+            box-shadow: var(--shadow);
+            margin-top: 0;
+        }
+
+        #song3DMap {
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -373,6 +466,12 @@
                     <div class="color-btn {{ 'active' if mood_color == 'yellow' }}" id="yellow-btn" onclick="window.location.href='/mood-map/yellow'" style="background: #ffd700;"></div>
                     <div class="color-btn {{ 'active' if mood_color == 'green' }}" id="green-btn" onclick="window.location.href='/mood-map/green'" style="background: #4CAF50;"></div>
                 </div>
+                <a href="/" class="back-home-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" />
+                    </svg>
+                    Back to Home
+                </a>
                 <button class="logout-btn" onclick="logout()">Logout from Spotify</button>
             </div>
         </div>
@@ -382,12 +481,13 @@
                 <div class="intensity-control">
                     <div class="intensity-label">
                         <span>Mood Intensity</span>
-                        <span id="intensity-value">5</span>
+                        <span id="intensityValue">5</span>
                     </div>
-                    <input type="range" class="slider" id="moodIntensity" min="0" max="10" value="5">
+                    <input type="range" min="1" max="10" value="5" class="slider" id="intensitySlider">
                 </div>
                 <button class="recommend-btn" onclick="getRecommendations()">Get Recommendations</button>
-                <button class="playlist-btn" onclick="createPlaylist()">Create Playlist from Recommendations</button>
+                <button class="playlist-btn" onclick="createPlaylist()" id="createPlaylistBtn" disabled>Create Playlist</button>
+                <a href="/mood-history" class="mood-chart-btn">View Mood Chart</a>
             </div>
 
             <div class="chart-container">
@@ -400,13 +500,22 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2>Now Playing</h2>
-            <iframe id="spotifyIframe" class="spotify-player" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            <div class="features-chart">
-                <canvas id="radarChart"></canvas>
-            </div>
-            <div class="feedback-section">
-                <textarea class="feedback-input" id="commentBox" placeholder="Share your thoughts about this song..."></textarea>
-                <button class="submit-feedback" onclick="submitFeedback()">Submit Feedback</button>
+            <iframe 
+                id="spotifyIframe" 
+                class="spotify-player" 
+                style="border-radius:12px"
+                width="100%"
+                height="80"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+            <div class="song-details">
+                <div class="features-chart">
+                    <canvas id="radarChart"></canvas>
+                </div>
+                <div class="compare-bar-chart">
+                    <canvas id="barCompareChart"></canvas>
+                </div>
             </div>
         </div>
     </div>
@@ -422,9 +531,107 @@
         let recommendedSongs = [];
         let radarChart = null;
 
-    document.getElementById("moodIntensity").oninput = function() {
+        // Grid boyutları
+        const GRID_SIZE = 20; // Her eksende kaç hücre olacağı
+        const grid = new Map(); // 3D grid için Map kullanıyoruz
+
+        // Grid hücresine nokta ekleme
+        function addPointToGrid(x, y, z, cluster) {
+            const gridX = Math.floor(x * GRID_SIZE);
+            const gridY = Math.floor(y * GRID_SIZE);
+            const gridZ = Math.floor(z * GRID_SIZE);
+            const key = `${gridX},${gridY},${gridZ}`;
+            
+            if (!grid.has(key)) {
+                grid.set(key, { count: 0, cluster: cluster });
+            }
+            grid.get(key).count++;
+        }
+
+        // Grid hücresinin yoğunluğunu hesaplama
+        function getDensity(x, y, z) {
+            const gridX = Math.floor(x * GRID_SIZE);
+            const gridY = Math.floor(y * GRID_SIZE);
+            const gridZ = Math.floor(z * GRID_SIZE);
+            const key = `${gridX},${gridY},${gridZ}`;
+            
+            return grid.has(key) ? grid.get(key).count : 0;
+        }
+
+        // Noktaları grid'e ekleme
+        function processPoints(points) {
+            grid.clear(); // Grid'i temizle
+            
+            // Her noktayı grid'e ekle
+            points.forEach(point => {
+                addPointToGrid(point.x, point.y, point.z, point.cluster);
+            });
+            
+            // Maksimum yoğunluğu bul
+            let maxDensity = 0;
+            grid.forEach(cell => {
+                maxDensity = Math.max(maxDensity, cell.count);
+            });
+            
+            return maxDensity;
+        }
+
+        // Plot oluşturma fonksiyonunu güncelle
+        function createPlot(points) {
+            const maxDensity = processPoints(points);
+            
+            const traces = [];
+            const clusters = [...new Set(points.map(p => p.cluster))];
+            
+            clusters.forEach(cluster => {
+                const clusterPoints = points.filter(p => p.cluster === cluster);
+                
+                const trace = {
+                    x: clusterPoints.map(p => p.x),
+                    y: clusterPoints.map(p => p.y),
+                    z: clusterPoints.map(p => p.z),
+                    mode: 'markers',
+                    type: 'scatter3d',
+                    marker: {
+                        size: 5,
+                        color: getClusterColor(cluster),
+                        opacity: 0.8,
+                        line: {
+                            color: cluster === 2 ? '#ffffff' : '#000000',
+                            width: 1
+                        }
+                    },
+                    name: `Cluster ${cluster}`
+                };
+                
+                traces.push(trace);
+            });
+
+            const layout = {
+                scene: {
+                    xaxis: { title: 'Danceability' },
+                    yaxis: { title: 'Energy' },
+                    zaxis: { title: 'Valence' },
+                    camera: {
+                        eye: { x: 1.5, y: 1.5, z: 1.5 }
+                    }
+                },
+                margin: { l: 0, r: 0, b: 0, t: 0 },
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                showlegend: true,
+                legend: {
+                    font: { color: 'white' },
+                    bgcolor: 'rgba(0,0,0,0.5)'
+                }
+            };
+
+            Plotly.newPlot('plot', traces, layout);
+        }
+
+        document.getElementById("intensitySlider").oninput = function() {
             currentIntensity = parseInt(this.value);
-            document.getElementById("intensity-value").innerText = currentIntensity;
+            document.getElementById("intensityValue").innerText = currentIntensity;
         };
 
         function getRecommendations() {
@@ -486,229 +693,285 @@
             });
         }
 
-    function plot3D(songs) {
-        let xValues = songs.map(song => song.PCA1);
-        let yValues = songs.map(song => song.PCA2);
-        let zValues = songs.map(song => song.PCA3);
-        let labels = songs.map(song => song.uri);
+        function plot3D(songs) {
+            let xValues = songs.map(song => song.PCA1);
+            let yValues = songs.map(song => song.PCA2);
+            let zValues = songs.map(song => song.PCA3);
+            let labels = songs.map(song => song.uri);
 
-        let colorMap = {
-            "red": "#FF0000",
-            "black": "#000000",
-            "yellow": "#FFD700",
-            "green": "#00FF00"
-        };
-        let selectedColor = colorMap["{{ mood_color }}"] || "#999999";
+            // Cluster ana rengi
+            let colorMap = {
+                "red": "#FF0000",
+                "black": "#000000",
+                "yellow": "#FFD700",
+                "green": "#00FF00"
+            };
+            let selectedColor = colorMap["{{ mood_color }}"] || "#999999";
 
-        let trace = {
-            x: xValues,
-            y: yValues,
-            z: zValues,
-            text: labels,
-            mode: 'markers',
-            marker: { 
-                size: 6,
-                color: selectedColor,
-                opacity: 0.8,
-                line: {
-                    color: selectedColor,
-                    width: 0.5
-                }
-            },
-            type: 'scatter3d',
-            hovertemplate: "<b>Song URI:</b> %{text}<extra></extra>"
-        };
+            // Nokta rengi sabit, opaklık sabit, boyut küçük
+            let colorArray = Array(xValues.length).fill(selectedColor);
+            let lineColor = ('{{ mood_color }}' === 'black') ? '#fff' : '#222';
 
-        let layout = {
-            title: '3D Mood-Based Song Clusters',
-            margin: { l: 0, r: 0, b: 0, t: 40 },
-            scene: { 
-                camera: { eye: { x: 1.5, y: 1.5, z: 1.5 } },
-                xaxis: { 
-                    title: 'PCA1',
-                    backgroundcolor: 'rgba(0,0,0,0)',
-                    gridcolor: 'rgba(255,255,255,0.1)',
-                    zerolinecolor: 'rgba(255,255,255,0.2)',
-                    showbackground: false
+            let trace = {
+                x: xValues,
+                y: yValues,
+                z: zValues,
+                text: labels,
+                mode: 'markers',
+                marker: { 
+                    size: 4,
+                    color: colorArray,
+                    opacity: 0.7,
+                    line: {
+                        color: lineColor,
+                        width: 1
+                    }
                 },
-                yaxis: { 
-                    title: 'PCA2',
-                    backgroundcolor: 'rgba(0,0,0,0)',
-                    gridcolor: 'rgba(255,255,255,0.1)',
-                    zerolinecolor: 'rgba(255,255,255,0.2)',
-                    showbackground: false
-                },
-                zaxis: { 
-                    title: 'PCA3',
-                    backgroundcolor: 'rgba(0,0,0,0)',
-                    gridcolor: 'rgba(255,255,255,0.1)',
-                    zerolinecolor: 'rgba(255,255,255,0.2)',
-                    showbackground: false
-                },
-                bgcolor: 'rgba(0,0,0,0)'
-            },
-            paper_bgcolor: 'rgba(0,0,0,0)',
-            plot_bgcolor: 'rgba(0,0,0,0)'
-        };
-
-        Plotly.newPlot('moodChart', [trace], layout, {
-            displayModeBar: true,
-            responsive: true,
-            displaylogo: false,
-            modeBarButtonsToRemove: [
-                'toImage',
-                'sendDataToCloud',
-                'editInChartStudio',
-                'toggleHover',
-                'toggleSpikelines',
-                'hoverClosestCartesian',
-                'hoverCompareCartesian'
-            ]
-        });
-
-        document.getElementById('moodChart').on('plotly_click', function(data) {
-            const pointIndex = data.points[0].pointNumber;
-            const songUri = data.points[0].text;
-            const song = songs.find(s => s.uri === songUri);
-            
-            if (!song) {
-                console.error('Song not found:', songUri);
-                return;
-            }
-
-            currentSongUri = song.uri;
-            const trackId = currentSongUri.split(':').pop();
-            
-            document.getElementById('spotifyIframe').src = `https://open.spotify.com/embed/track/${trackId}`;
-            document.getElementById('songModal').style.display = "flex";
-            
-            // Radar chart için verileri hazırla
-            const features = {
-                labels: ['Danceability', 'Energy', 'Valence', 'Tempo'],
-                datasets: [{
-                    label: 'Song Features',
-                    data: [
-                        song.danceability,
-                        song.energy,
-                        song.valence,
-                        song.tempo / 200
-                    ],
-                    backgroundColor: 'rgba(255, 99, 132, 0.4)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    pointBackgroundColor: 'rgb(255, 99, 132)',
-                    borderWidth: 3,
-                    pointRadius: 6,
-                    pointBorderWidth: 2,
-                    pointHoverRadius: 8,
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(255, 99, 132)'
-                }]
+                type: 'scatter3d',
+                hovertemplate: "<b>Song URI:</b> %{text}<extra></extra>"
             };
 
-            // Eğer önceki chart varsa yok et
-            if (radarChart) {
-                radarChart.destroy();
-            }
+            let layout = {
+                title: '3D Mood-Based Song Clusters',
+                margin: { l: 0, r: 0, b: 0, t: 40 },
+                scene: { 
+                    camera: { eye: { x: 1.5, y: 1.5, z: 1.5 } },
+                    xaxis: { 
+                        title: 'Danceability',
+                        backgroundcolor: 'rgba(0,0,0,0)',
+                        gridcolor: 'rgba(255,255,255,0.1)',
+                        zerolinecolor: 'rgba(255,255,255,0.2)',
+                        showbackground: false
+                    },
+                    yaxis: { 
+                        title: 'Energy',
+                        backgroundcolor: 'rgba(0,0,0,0)',
+                        gridcolor: 'rgba(255,255,255,0.1)',
+                        zerolinecolor: 'rgba(255,255,255,0.2)',
+                        showbackground: false
+                    },
+                    zaxis: { 
+                        title: 'Valence',
+                        backgroundcolor: 'rgba(0,0,0,0)',
+                        gridcolor: 'rgba(255,255,255,0.1)',
+                        zerolinecolor: 'rgba(255,255,255,0.2)',
+                        showbackground: false
+                    },
+                    bgcolor: 'rgba(0,0,0,0)'
+                },
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)'
+            };
 
-            // Yeni radar chart oluştur
-            const ctx = document.getElementById('radarChart').getContext('2d');
-            radarChart = new Chart(ctx, {
-                type: 'radar',
-                data: features,
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        r: {
-                            min: 0,
-                            max: 1,
-                            beginAtZero: true,
-                            backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.5)'
-                            },
-                            ticks: {
-                                display: true,
-                                backdropColor: 'transparent',
-                                color: 'rgba(255, 255, 255, 0.9)',
-                                z: 1,
-                                font: {
-                                    size: 12,
-                                    weight: '600'
-                                }
-                            },
-                            pointLabels: {
-                                font: {
-                                    size: 16,
-                                    family: 'Poppins',
-                                    weight: '600'
+            // Performans optimizasyonları
+            const config = {
+                displayModeBar: true,
+                responsive: true,
+                displaylogo: false,
+                modeBarButtonsToRemove: [
+                    'toImage',
+                    'sendDataToCloud',
+                    'editInChartStudio',
+                    'toggleHover',
+                    'toggleSpikelines',
+                    'hoverClosestCartesian',
+                    'hoverCompareCartesian'
+                ],
+                // Yeni performans ayarları
+                staticPlot: false,
+                scrollZoom: false,
+                doubleClick: false,
+                showTips: false,
+                showLink: false,
+                linkText: '',
+                queueLength: 0,
+                editable: false,
+                autosizable: false,
+                fillFrame: false,
+                frameMargins: 0,
+                scrollZoom: false,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('moodChart', [trace], layout, config);
+
+            document.getElementById('moodChart').on('plotly_click', function(data) {
+                const pointIndex = data.points[0].pointNumber;
+                const songUri = data.points[0].text;
+                const song = songs.find(s => s.uri === songUri);
+                
+                if (!song) {
+                    console.error('Song not found:', songUri);
+                    return;
+                }
+
+                currentSongUri = song.uri;
+                const trackId = currentSongUri.split(':').pop();
+                
+                document.getElementById('spotifyIframe').src = `https://open.spotify.com/embed/track/${trackId}?utm_source=generator`;
+                document.getElementById('songModal').style.display = "flex";
+                
+                // Radar chart için verileri hazırla
+                const features = {
+                    labels: ['Danceability', 'Energy', 'Valence', 'Tempo'],
+                    datasets: [{
+                        label: 'Song Features',
+                        data: [
+                            song.danceability,
+                            song.energy,
+                            song.valence,
+                            song.tempo / 200
+                        ],
+                        backgroundColor: 'rgba(52, 152, 219, 0.15)',
+                        borderColor: '#3498db',
+                        pointBackgroundColor: '#3498db',
+                        borderWidth: 3,
+                        pointRadius: 6,
+                        pointBorderWidth: 2,
+                        pointHoverRadius: 8,
+                        pointBorderColor: '#222',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#3498db'
+                    }]
+                };
+
+                // Eğer önceki chart varsa yok et
+                if (radarChart) {
+                    radarChart.destroy();
+                }
+
+                // Yeni radar chart oluştur
+                const ctx = document.getElementById('radarChart').getContext('2d');
+                radarChart = new Chart(ctx, {
+                    type: 'radar',
+                    data: features,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        animation: {
+                            duration: 1200,
+                            easing: 'easeOutQuart',
+                        },
+                        scales: {
+                            r: {
+                                min: 0,
+                                max: 1,
+                                beginAtZero: true,
+                                backgroundColor: '#fff',
+                                grid: {
+                                    color: '#bbb'
                                 },
-                                color: 'rgba(255, 255, 255, 0.9)'
-                            },
-                            angleLines: {
-                                color: 'rgba(255, 255, 255, 0.5)',
-                                lineWidth: 2
+                                ticks: {
+                                    display: true,
+                                    backdropColor: 'transparent',
+                                    color: '#222',
+                                    z: 1,
+                                    font: {
+                                        size: 12,
+                                        weight: '600'
+                                    }
+                                },
+                                pointLabels: {
+                                    font: {
+                                        size: 16,
+                                        family: 'Poppins',
+                                        weight: '600'
+                                    },
+                                    color: '#222'
+                                },
+                                angleLines: {
+                                    color: '#bbb',
+                                    lineWidth: 2
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
                             }
                         }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
+                    }
+                });
+
+                // Karşılaştırmalı bar chart için cluster ortalamasını hesapla
+                const clusterSongs = songs;
+                const avg = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
+                const avgDance = avg(clusterSongs.map(s => s.danceability));
+                const avgEnergy = avg(clusterSongs.map(s => s.energy));
+                const avgValence = avg(clusterSongs.map(s => s.valence));
+                const avgTempo = avg(clusterSongs.map(s => s.tempo)) / 200;
+
+                const barCompareData = {
+                    labels: ['Danceability', 'Energy', 'Valence', 'Tempo'],
+                    datasets: [
+                        {
+                            label: 'Current Song',
+                            data: [song.danceability, song.energy, song.valence, song.tempo / 200],
+                            backgroundColor: '#3498db',
+                        },
+                        {
+                            label: 'Cluster Avg',
+                            data: [avgDance, avgEnergy, avgValence, avgTempo],
+                            backgroundColor: '#95a5a6',
+                        }
+                    ]
+                };
+
+                // Bar chart oluştur
+                if (window.barCompareChartInstance) {
+                    window.barCompareChartInstance.destroy();
+                }
+                const barCtx = document.getElementById('barCompareChart').getContext('2d');
+                window.barCompareChartInstance = new Chart(barCtx, {
+                    type: 'bar',
+                    data: barCompareData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        animation: {
+                            duration: 1200,
+                            easing: 'easeOutQuart',
+                        },
+                        plugins: {
+                            legend: {
+                                display: true,
+                                labels: {
+                                    color: '#222',
+                                    font: { size: 14, weight: 'bold' }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                grid: { color: '#eee' },
+                                ticks: { color: '#222', font: { size: 13, weight: 'bold' } }
+                            },
+                            y: {
+                                min: 0,
+                                max: 1,
+                                grid: { color: '#eee' },
+                                ticks: { color: '#222', font: { size: 13, weight: 'bold' } }
+                            }
                         }
                     }
-                }
+                });
             });
-        });
-    }
+        }
 
-    // İlk yükleme için mevcut şarkıları göster
-    plot3D(allSongs);
+        // İlk yükleme için mevcut şarkıları göster
+        plot3D(allSongs);
 
-    function closeModal() {
-        document.getElementById('songModal').style.display = "none";
+        function closeModal() {
+            document.getElementById('songModal').style.display = "none";
             if (radarChart) {
                 radarChart.destroy();
                 radarChart = null;
             }
-    }
-
-    function submitFeedback() {
-        const comment = document.getElementById('commentBox').value.trim();
-        if (!comment) {
-            showToast("Please enter your feedback first.");
-            return;
         }
 
-        fetch('/feedback', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                song_uri: currentSongUri,
-                comment: comment
-            })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            document.getElementById('commentBox').value = '';
-            showToast("Thank you for your feedback!");
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            showToast("Error submitting feedback. Please try again.");
-        });
-    }
-
-    function showToast(message) {
-        const toast = document.getElementById("toast");
-        toast.innerText = message;
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.innerText = message;
             toast.classList.add("show");
             setTimeout(() => { toast.classList.remove("show"); }, 3000);
         }

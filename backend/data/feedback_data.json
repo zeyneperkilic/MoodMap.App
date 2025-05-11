@@ -1,0 +1,4795 @@
+{
+    "spotify:track:3kgKVcBpBGuSeaEC0AZGlb": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for clubbing "
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 2,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:6PilVqdlecQR7zXEA6YWpb": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calming"
+        ],
+        "sentiment": 0.4576,
+        "cluster_id": 3,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:0bqV6cwBAloZuaPTFww9F4": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is not so calm"
+        ],
+        "sentiment": -0.3556,
+        "cluster_id": 3,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:2l5PuwOt6w8IHq9ViMNla9": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it is suitable for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:3KVF4VK0Kclakez9LCGYga": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it started out as not being sad at first but overall it was ok"
+        ],
+        "sentiment": 0.554,
+        "cluster_id": 0,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:5sr1yOZkTPWjvP71Hts9pN": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I'm not sure if it's a happy song"
+        ],
+        "sentiment": 0.4094,
+        "cluster_id": 1,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:4b4rqSQbfSnUKESuj49BQT": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This song increased my energy"
+        ],
+        "sentiment": 0.4939,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:5Nj2DabaAuT2GhjozV4K5A": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It made me wanna dance",
+            "this is a song to dance to ",
+            "so energetic"
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:6OlygUNPF9IhPo7Zhri6sU": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I love the beats",
+            "It made me happier"
+        ],
+        "sentiment": 0.5267,
+        "cluster_id": 2,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:6oRbm1KOqskLTFc1rvGi5F": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is suitable for sad mood "
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:2hq5r9Drp3mVlMBn0LZnwp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is calming not energetic"
+        ],
+        "sentiment": 0.0757,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:3Zxj5KmrjQHDJJwSBw1JbX": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this is really a happy song i love it :)"
+        ],
+        "sentiment": 0.9038,
+        "cluster_id": 1,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:2k0thuZ9X795s8djUxWZNH": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "increased my happiness"
+        ],
+        "sentiment": 0.6908,
+        "cluster_id": 1,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:1PPEVFT0BYIGFBX6y4idZF": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I love this song it is accurate for the mood"
+        ],
+        "sentiment": 0.6369,
+        "cluster_id": 1,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:2qnIGmZIpYX8VdzCBj59f0": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It is sooo happy"
+        ],
+        "sentiment": 0.5719,
+        "cluster_id": 1,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:3fMUDokJp2AldIlJXPi46u": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This song is energetic thank you",
+            "great for the energetic mood"
+        ],
+        "sentiment": 0.7906,
+        "cluster_id": 2,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:28Z4IeW9azaCyVMQpJtyp7": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is dark and sad so its accurate for the mood"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:5KLXZdtXcUQkR6oSal8y4a": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is even sadder",
+            "truly a sad song"
+        ],
+        "sentiment": -0.0516,
+        "cluster_id": 0,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:402u8vEl017GWUpTxYwbxT": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It helped me calm down",
+            "it calmed me "
+        ],
+        "sentiment": 0.3818,
+        "cluster_id": 3,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:1uAZtAFqShO4sF2fgvhihA": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I love how calming this is",
+            "so calm"
+        ],
+        "sentiment": 0.3804,
+        "cluster_id": 3,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:1vbkyn29kJzPS7SMjNy7p9": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It made me feel good i needed to calm down"
+        ],
+        "sentiment": 0.6369,
+        "cluster_id": 3,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:0efPtOmkxjw7MH9ZDwIybM": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "suitable for listening while sleeping"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:6PHdVtAUvEz8btzgF5r8uU": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so dark"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:6QYXx342lLHnfw0K49rwSc": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this is a sad song"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 3,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:68xdeOV7AJdH5KeMa8rAUa": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It is good for the soul and calming"
+        ],
+        "sentiment": 0.6808,
+        "cluster_id": 3,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:3QywIgYpHXTkfVvownfUmC": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "emotionally intense"
+        ],
+        "sentiment": 0.0772,
+        "cluster_id": 3,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:7v1lLjiTay0Swytt9IHncb": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This song is so happy i love it"
+        ],
+        "sentiment": 0.8808,
+        "cluster_id": 1,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:6UIebetubMSW1SB74VabKk": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "made me get up and dance!!"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 2,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:049VqBETqY4gIRJuOJyQuF": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is not accurate for energetic mood"
+        ],
+        "sentiment": -0.3412,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:6Uc0vWemOjA1WssvFQ4Qv4": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song should be in the calm mood ",
+            "I love the melody it gave me chills and energy"
+        ],
+        "sentiment": 0.743,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:7rfMegEFbia0lWCYmbPUvu": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not energetic"
+        ],
+        "sentiment": -0.3412,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:0f8Scx4QL9PvJEiNd60bHK": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I loved this song, it boosted my energy"
+        ],
+        "sentiment": 0.8176,
+        "cluster_id": 2,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:7AMD00woWOazJ2npdCTSbm": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I chose an energetic song with an intensity of 1 and I think it's accurate."
+        ],
+        "sentiment": 0.4404,
+        "cluster_id": 2,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:2VDBuv1RJN7G99kkpNfBEb": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calming with dark vibes"
+        ],
+        "sentiment": 0.4576,
+        "cluster_id": 3,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:73HDhawpwfPF7EzyEyPtH8": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This song feels melancholic, perfect for the sad cluster",
+            "This feels more like calm, not sad"
+        ],
+        "sentiment": 0.7861,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:6tMKJ1clCNVBFsVGLHtSGM": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "exactly what i expect from a sad song"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:7wQc8LHQueTVPqUDzP6Yvr": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song explodes with energy"
+        ],
+        "sentiment": 0.2732,
+        "cluster_id": 2,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:2ZcVXmalq9QxTGWUOaI8CR": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "such a powerful song "
+        ],
+        "sentiment": 0.4215,
+        "cluster_id": 2,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:1zlIZ8I2941vGAVN4OS7xl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "doesn\u2019t feel intense enough"
+        ],
+        "sentiment": 0.0772,
+        "cluster_id": 2,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:1xDKkygFnS2mWpRqgn6QZ0": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "way too chill for energetic"
+        ],
+        "sentiment": 0.4404,
+        "cluster_id": 2,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:5Hc511aAeqSeQ5PoBqZd84": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This doesnt evoke any energetic emotions for me"
+        ],
+        "sentiment": -0.3412,
+        "cluster_id": 2,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:1W0OCrMsRP1SLTEdw3JwEz": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I wouldnt categorize this song as sad"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:5UXJzLFdBn6u9FJTCnoHrH": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "too bright for sad category"
+        ],
+        "sentiment": -0.0516,
+        "cluster_id": 0,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:48TNLcToLs8DWkdj5vYdiW": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "too hopeful to be in the sad mood category"
+        ],
+        "sentiment": 0.0516,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:7ajerU3rzpQjWn8uNC2QUx": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "well placed"
+        ],
+        "sentiment": 0.2732,
+        "cluster_id": 0,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:42zlh6ZkLMAkvMF70K6ICR": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "really a happy song i love it"
+        ],
+        "sentiment": 0.8473,
+        "cluster_id": 1,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:57uBHI2aQPDxsDHgHMGgBb": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "such a bright song "
+        ],
+        "sentiment": 0.4404,
+        "cluster_id": 1,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:0K76ZoODQpb87LQtzxrd5N": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it is more energetic than happy"
+        ],
+        "sentiment": 0.7996,
+        "cluster_id": 1,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:3YYgRnTACtTTAbESiT6CQB": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It increased my happiness"
+        ],
+        "sentiment": 0.6908,
+        "cluster_id": 1,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:21vp1orbqySVyww9ngW44w": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so funky and happy"
+        ],
+        "sentiment": 0.5058,
+        "cluster_id": 1,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:7qOsSOpiL3R8RKyiBtIYNQ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I want to dance to this song "
+        ],
+        "sentiment": 0.0772,
+        "cluster_id": 1,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:3HGgGQRJtP9EDhcgAuHQ5E": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "its melody is calming"
+        ],
+        "sentiment": 0.4019,
+        "cluster_id": 3,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:33MQVOulAb4ZlUP2l3yZBG": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this is an energetic song not a calm one"
+        ],
+        "sentiment": 0.2354,
+        "cluster_id": 3,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:67qn3OtziLlpOtVZ22EiQ4": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I love the vibe so energetic"
+        ],
+        "sentiment": 0.8377,
+        "cluster_id": 2,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:0dbZ2iUuKvsm3FupBw6M9N": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "suitable for the mood category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 2,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:1U72CHIOVFym1Uq0DOGLSb": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Sooo upbeat"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 2,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:6APTEV2EIRpBEvuTrS5XTv": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is a true energy blitz"
+        ],
+        "sentiment": 0.5994,
+        "cluster_id": 2,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:0onxlDmMvIVkcyzS0NCtox": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Its so fun and happy I love it"
+        ],
+        "sentiment": 0.9145,
+        "cluster_id": 1,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:6ziRYTiTpoipvY8bQUegRk": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "the tempo and melody scream happiness :)"
+        ],
+        "sentiment": 0.5994,
+        "cluster_id": 1,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:2DVUJ7LTIOEQqjfOZXs8iU": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "lyrics are suitable for sad mood but i dont think the melody is suitable"
+        ],
+        "sentiment": -0.2617,
+        "cluster_id": 0,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:2oeU3QbKx6Cj7lJC2fqD1X": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I think this song it energetic not sad"
+        ],
+        "sentiment": 0.6656,
+        "cluster_id": 0,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:3ZuV44pUkeWSSF5oMxh0OT": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song is so angry "
+        ],
+        "sentiment": -0.6418,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:7sKhrLaPN7O9wb4nrCtvgw": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "its energetic and well placed"
+        ],
+        "sentiment": 0.6124,
+        "cluster_id": 2,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:4TszeCUZEfZZjkYddFWxPX": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not that energetic it is a calm song "
+        ],
+        "sentiment": -0.0274,
+        "cluster_id": 2,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:7xINpy0rVreuzLsNMFaC4P": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It is okay for this intensity level",
+            "great for the category and the intensity"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 2,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:0fodztaFTiApMhI277CqnR": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "kinda energetic"
+        ],
+        "sentiment": 0.3832,
+        "cluster_id": 2,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:6r0xCElmRcuCZyUzza4qRW": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "really a happy song also energetic"
+        ],
+        "sentiment": 0.7832,
+        "cluster_id": 1,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:4AGPU9325LRTIBsBSJ5v75": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it is a hopeful song"
+        ],
+        "sentiment": 0.5106,
+        "cluster_id": 1,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:5vuh4FAd5apHmhD85XJOyH": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this is truly a sad song"
+        ],
+        "sentiment": -0.0516,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:0F0bUjqrveFfAkLpZbVVkS": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song is scary and sad i think its suitable for the mood"
+        ],
+        "sentiment": -0.743,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:7AU0zo4WShS29olDPT5DsN": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "its heartbreaking",
+            "this is What i expect from a sad song"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:2DY6Saf2cf3uuNfCk8pVtO": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It's a song to listen to when you're sad because it's so happy"
+        ],
+        "sentiment": 0.3902,
+        "cluster_id": 1,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:69a9OhinAE7RDcM8KBzE5D": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Its a slow song but its also energetic i love it"
+        ],
+        "sentiment": 0.8922,
+        "cluster_id": 2,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:42lBcTbECNEXjuElfVrz05": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate for the mood and intensity "
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:6BmSaKZjPiJB0xFKzxhUOr": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "started slowly then increased in energy"
+        ],
+        "sentiment": 0.4939,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:6e9raNhQekyVsv2AwT5Wt7": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "very energetic dance song"
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:5eeGUhATAyTPjtX3lOJYxP": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this is really a fast song with a high tempo"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:364d5cRFzO2bqpieuqcKUX": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so energetic im gonna listen to it from now on "
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:5bPufOYY6oBotYydpsaX7E": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is not belong here this is not a sad song"
+        ],
+        "sentiment": 0.3724,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:2P4rny6MFclwJCGPhtBKAL": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I dont think this song is suitable for sad mood"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:3LZEfNShP0RjbHyd9vXQ2m": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song is too powerful for the sad cluster"
+        ],
+        "sentiment": -0.0772,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:4M2YIadfryQDtFc1GgE8ev": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "a little energetic for sad cluster"
+        ],
+        "sentiment": -0.0591,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:7DXPIB1W4Ro18VER7p9WDm": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This song is dark but i think its accurate for the mood category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:0Wi1OVp6U25bs7zq2i7sh7": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "the tempo is so high it shouldnt be like this for the sad mood"
+        ],
+        "sentiment": -0.6381,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:19MYWyeATrI33acF9xSgBk": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is completely in the wrong place this song a happy song not a sad song"
+        ],
+        "sentiment": 0.4386,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:46xA9y3Fy9Igs0EnFK5CsX": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Too lively for the sad category"
+        ],
+        "sentiment": -0.0516,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:3DFOzExEZlVcnRPGix2Znk": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is sad okay"
+        ],
+        "sentiment": -0.296,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:1FpdzA0CUMv4ZtkTJs6dmt": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is both powerful and sad"
+        ],
+        "sentiment": -0.0772,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:1tldAR804rZ1d6J1vxcPX5": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this is too happy for a sad song i dont like it"
+        ],
+        "sentiment": -0.1306,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:15DtpoDJS636Lu5Z50QLfd": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This should be in the calm category"
+        ],
+        "sentiment": 0.3182,
+        "cluster_id": 2,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:4YMm5YurMSyvuZkIGOP25a": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This song is calm not energetic, sorry"
+        ],
+        "sentiment": 0.0299,
+        "cluster_id": 2,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:5w5R4J7zOzfxN1AUmo2pPU": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is not an energetic song, I didn't like it"
+        ],
+        "sentiment": -0.5448,
+        "cluster_id": 2,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:6NKq6vxkIJgcpV3aERGfAC": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "If I had chosen the calm category, it would have been okay, but I had chosen the energetic category"
+        ],
+        "sentiment": 0.714,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:5PcdOdrFGwFZBibiYfEiEA": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Unfortunately, calm songs are recommended for energetic songs with low intensity levels"
+        ],
+        "sentiment": 0.3612,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:0EPgqKlE7Wb8fQFACQdMVh": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "too energetic for the category"
+        ],
+        "sentiment": 0.4404,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:6yj7fSEuePRyaYO5gIbGSx": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I like how calming this song is"
+        ],
+        "sentiment": 0.6369,
+        "cluster_id": 3,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:6Ih1hDdlQgoBgDFDXDJfB4": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I'll listen to it when I need to calm down, thanks"
+        ],
+        "sentiment": 0.6369,
+        "cluster_id": 3,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:667fYlOOwzNnaSsemcDw4g": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "The sound of rain is so beautiful and calming"
+        ],
+        "sentiment": 0.8383,
+        "cluster_id": 3,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:0hpO4xnuzoW0jjJVP3mOrq": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is a very powerful song, but I also admit it has a calming side"
+        ],
+        "sentiment": 0.778,
+        "cluster_id": 3,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:0W5W4s1azbwhfNex1Y1Lx3": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "both sad and calming"
+        ],
+        "sentiment": -0.1027,
+        "cluster_id": 3,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:4EijEBeN3HwTT2MclmELgQ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "its like a calming soundtrack"
+        ],
+        "sentiment": 0.6369,
+        "cluster_id": 3,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:3tRdNNsHNbYEqB1lsVNrEb": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "a bit of a dark song"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:0ar77SmMUtj04pFWKSHFSt": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "very peaceful"
+        ],
+        "sentiment": 0.5413,
+        "cluster_id": 3,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:4COR2ZPEyUn0lsbAouRWxA": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This song is too energetic for calm mood"
+        ],
+        "sentiment": 0.6369,
+        "cluster_id": 3,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:5qPGi9p8VqcizfdgWxtmLt": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It has a calming atmosphere"
+        ],
+        "sentiment": 0.4019,
+        "cluster_id": 3,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:5MvcUmuAXX6c5gJVVmC9qc": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it is calming thanks"
+        ],
+        "sentiment": 0.6808,
+        "cluster_id": 3,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:6gji8i34T6swZ6t5wNMuBK": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it has a heavenly vibe"
+        ],
+        "sentiment": 0.6124,
+        "cluster_id": 3,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:6gwDylOaYsYuGhstlbAdOU": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "very soft"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:4FRToEtKt37MKOry3ZnnW9": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I prefer it from now on when I want to listen to something sad"
+        ],
+        "sentiment": -0.4215,
+        "cluster_id": 0,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:4I3ChHEmZOcvYCGvEm6fUi": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is really a dark and sad song"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:2wNK1PjIS9NbBIchakaL7k": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I love this band its accurate for the mood"
+        ],
+        "sentiment": 0.6369,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:1I0HP5h8Gkc5BbO27u7xUj": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It's a heavy song in terms of guitar, but overall we can say it's sad"
+        ],
+        "sentiment": -0.631,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:7JV5IaikHCM5un1rOEC3mP": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Its melody is sad and dreamy"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:7yuaqdDsXvgQPTU4CljTCI": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This was the saddest of the songs that came out"
+        ],
+        "sentiment": -0.6124,
+        "cluster_id": 0,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:64WjmdemhwRasumTOCfTxP": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it makes you think, so sad"
+        ],
+        "sentiment": -0.6113,
+        "cluster_id": 0,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:6EC0MgDBa55qku3Gtc8bE8": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This song made me sad"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:65QiDjsXKQ2l3n8c9hnOtN": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this is striking and sad"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:5MtnbY0fACKCYyMAsSPmSf": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I love this band so much they give me chills"
+        ],
+        "sentiment": 0.6369,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:4ZWRJywks9RfVm35XPTmhE": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "powerful and calming",
+            "it calmed me",
+            "not bad"
+        ],
+        "sentiment": 0.431,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:3pHkh7d0lzM2AldUtz2x37": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Its melody is so calming and hopeful"
+        ],
+        "sentiment": 0.7938,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:0cwIrc5yKUQiwNCOyNdN0x": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "both dark and calming"
+        ],
+        "sentiment": 0.4019,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:7GlwvJ8iAbCEfZjGq3iwmZ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I love how calming this is",
+            "nice and calm"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:7nB4t3dzz164c89LKjelWd": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so dreamy"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:2c3RC6Q1srMggPeBitBBvO": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "satisfied me for this mood",
+            "correct"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:74ctB0ufdAY69TDN9J18V9": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calm"
+        ],
+        "sentiment": 0.3804,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:4oOG4XN10XifwtT8t8OVEH": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I dont like it this is an energetic song"
+        ],
+        "sentiment": 0.1999,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:2mUCD9Bx2IOFFrVtEH3tyg": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "really a calm song"
+        ],
+        "sentiment": 0.3774,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:6FLZJHbmuF7X6ja7C3xBq6": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calming"
+        ],
+        "sentiment": 0.4576,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:3RRxpf5J0pE8mRz5Qnh6rp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "very calming song"
+        ],
+        "sentiment": 0.4576,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:4H3rRjXxDp6hKEJQtUBohW": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so bright and calm",
+            "nice for the calm category"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:3ueFkv5CagYrLJXqYXh0aq": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it helped me to calm down"
+        ],
+        "sentiment": 0.3182,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:5LQOW73gHf3laqncEWRjf6": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it's accurate for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:2lyyDJyp9EWJ28drEu1PZv": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calming"
+        ],
+        "sentiment": 0.4576,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:62hcP75utj0j2cwcRrOnQu": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I love how calming this is"
+        ],
+        "sentiment": 0.7845,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:4rnwhQcf2umzjvjIEvZbM6": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "This is so nice and calming",
+            "not great, its not correct"
+        ],
+        "sentiment": -0.5096,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:30sJmjuLalNSzlRIml1PlJ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song is everything",
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:3Xwm60uQZ5ON8dxuXmkcwn": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "kinda accurate",
+            "not so great"
+        ],
+        "sentiment": -0.544,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:6uWZiHfVLcEGgrvSYCcGzQ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "perfect for the mood",
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:7zsT5Dd6rLo8AOrN4Bj4Hl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it helped me to calm down, i love it"
+        ],
+        "sentiment": 0.7579,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:6gEFr1UkQ1vd4MCkcKB5On": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so good and calming"
+        ],
+        "sentiment": 0.7316,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:4Uia0OWwFgRTePZXlws8CF": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "its melody is so calming",
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:2IYg3jjYA9KBXHB7ADBMRy": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for dancing",
+            "so energetic and happy"
+        ],
+        "sentiment": 0.7996,
+        "cluster_id": 2,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:1QqHAKSbtUZ5a0XiVkqMKL": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it increased my energy"
+        ],
+        "sentiment": 0.4939,
+        "cluster_id": 2,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:4jCh5q2WernN6vCNGcivul": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this is an energetic song"
+        ],
+        "sentiment": 0.4404,
+        "cluster_id": 2,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:30cdMfFu6OZKseI0hvnVHX": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this is great for the mood category"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:3DAXJy444bfvdiuWUrw46p": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song is accurate for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:1anT56ZrRpmLzwmGNdsOUF": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I am satisfied"
+        ],
+        "sentiment": 0.4215,
+        "cluster_id": 0,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:2sXnE83lCtjAEePylvKzlF": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "good for the mood category"
+        ],
+        "sentiment": 0.4404,
+        "cluster_id": 0,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:7tlzdPWrtfhhLRwCmpetmV": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Correct for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:3lVTv8eqHKaHwBO9IRbXy1": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct",
+            "correct"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:2LK0bYcaXZ5fHpSsYA8Hs5": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:4ut5G4rgB1ClpMTMfjoIuy": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not correct for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:4NUTya0CVZD7obWqNqoUmj": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not correct for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:1ecYeQwrr5HcohvvlnObBk": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:1ejs5CFGfXc0nCKhts3mKQ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:3zN4RHVW3irCTcb3YnvxL1": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:5bfvQG4NGiTFfUxPdMKrUd": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:4zTSXb8Ozn8qveMhtfpVIW": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:3t4L0670y9Z2GQ0y0NYwVR": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not great for the mood"
+        ],
+        "sentiment": -0.5096,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:1xAhMh6vQXXASj6yBkF33n": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:4wycVMta3MLNrI8Q6u8QQt": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:70dDVrkvZhHnujIltLiBAH": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:38cVwEk0vADqYYzIaTBIOh": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:79hDRYGiPuRp1vcuUEVfVu": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so energetic"
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:4eYrjXGlDycrqg7a0Wgwed": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it increased my energy"
+        ],
+        "sentiment": 0.4939,
+        "cluster_id": 2,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:3BELIEnDdXEpgMuih6XsMQ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "very energetic song"
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:2gF7ALRvC99QMmhCCo4LyM": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calm and nice"
+        ],
+        "sentiment": 0.6865,
+        "cluster_id": 3,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:1A7tGrP436qjLDjp5qNZAt": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "really calm"
+        ],
+        "sentiment": 0.3804,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:1IQ1qFfBmWBMrKi5vCnBoH": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calm"
+        ],
+        "sentiment": 0.3804,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:1DyM6smzGOEoM6EotzqvRL": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calm song"
+        ],
+        "sentiment": 0.3804,
+        "cluster_id": 3,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:05704F5Uk32MIb9tX5omWQ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it calmed me down"
+        ],
+        "sentiment": 0.3818,
+        "cluster_id": 3,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:1zkkvSLk5Nh4uoyKWwuie9": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great "
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:6IuiRJsGQ1pCqyGwc9lBgi": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "nice for the category"
+        ],
+        "sentiment": 0.4215,
+        "cluster_id": 0,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:1doSkxaYHGF0RElC3mTFWa": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood category"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:4fqtQ844feLuaIPCX6KSOF": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "nice and correct"
+        ],
+        "sentiment": 0.4215,
+        "cluster_id": 0,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:0wW1DDPsvORqumDvYwpnRq": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calm"
+        ],
+        "sentiment": 0.3804,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:5I9sHwLDX28tLtzVgKLtpr": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calm and nice"
+        ],
+        "sentiment": 0.6865,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:5ddjyJCQXl077CRXS0ieOh": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calm"
+        ],
+        "sentiment": 0.3804,
+        "cluster_id": 3,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:0jfHy96HxLUFY1uOrd8YCj": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great and calm"
+        ],
+        "sentiment": 0.7506,
+        "cluster_id": 3,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:3CsGqy0ajJSqIDBe8fWJWt": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "very calm"
+        ],
+        "sentiment": 0.3804,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:1mELID7imqVCpel0YfveN8": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "its okay"
+        ],
+        "sentiment": 0.2263,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:6hNZ5O5riDfxd2wWNgkjVn": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calm"
+        ],
+        "sentiment": 0.3804,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:7FhgwVNPdRNUVVoQrqrcwD": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "very calm song"
+        ],
+        "sentiment": 0.3804,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:2su5YgdjCxOQe5VEcEcu8f": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it helped me to calm down"
+        ],
+        "sentiment": 0.3182,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:3B6yH5oyvUUcKd0ahMNjDO": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It was okay, nothing stood out"
+        ],
+        "sentiment": 0.2263,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:6XvTPNNJPVFflg8koMO97r": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:3eHyl3RZLhCJaqbB3fewP4": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "its okay"
+        ],
+        "sentiment": 0.2263,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:4E1lxk5QTXEZq6ie3V6GNB": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the sad mood"
+        ],
+        "sentiment": 0.25,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:39eKdJcCdYYRdKEZRfKJDJ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:3cfnGXJ9bmiWvFqEO6ff8B": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I dont know"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:6971NdQwkvB23RL2k8adCu": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not correct for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:6K1kcYyDbXppFHfD3qt0NT": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "no this is not correct"
+        ],
+        "sentiment": -0.296,
+        "cluster_id": 0,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:1AiAQF07CLQmJq1oyc6gce": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so happy and correct"
+        ],
+        "sentiment": 0.6115,
+        "cluster_id": 1,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:54TgeMeInoK6wgPWw58ri7": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great song and correct for the mood"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 1,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:5jttMJPYaQWpceBPN3hNN5": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so happy"
+        ],
+        "sentiment": 0.6115,
+        "cluster_id": 1,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:3HiPTd5WyqS1jyDloo4JBT": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great song and it increased my happiness"
+        ],
+        "sentiment": 0.8689,
+        "cluster_id": 1,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:5CdmqCoTzTPGv4o03HmD2C": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the happy mood"
+        ],
+        "sentiment": 0.8316,
+        "cluster_id": 1,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:4ZKTao9nCDZ1kgVwLuDSu7": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so energetic and great for dancing"
+        ],
+        "sentiment": 0.8204,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:4CdOu8c92cSe1at4jXvWxN": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "really energetic"
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:44zKoBIY0C87EbGRyGsz5R": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:6nvkGpQpm3JAHNAJOCiQmG": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "kinda accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:1KmOjR7g4vFCAMXOVqwCwJ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "kind of correct"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:3KALL5XljQujn4cgx5NoVW": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:6xcRnI7LJAONyd2kmk5564": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not so great for the mood"
+        ],
+        "sentiment": -0.544,
+        "cluster_id": 0,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:4wrblyWP8d115gglVaWTw1": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not so great for the mood"
+        ],
+        "sentiment": -0.544,
+        "cluster_id": 0,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:2qBwHquWC57lQK9XZiZVgk": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:1l735Md0ulTeMJggbYHxrs": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the sad mood"
+        ],
+        "sentiment": 0.25,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:7FCiDC7ojdm19CJePq6QAe": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 3,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:6Bl2uCVLNi0YaQ5zlH3J7E": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:1jV0x7tTOMqzK8yXy139mJ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the category"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 3,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:2beBdwV1Y5PtWxDk1GgAZ6": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:3nDC2NWKaxPqBUuvWDcKIk": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:6YOhkrO8FLJLUYNccTn1ty": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not so calming"
+        ],
+        "sentiment": -0.3559,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:4ytumnIyMSsWvaBvyWCo2P": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not so calming"
+        ],
+        "sentiment": -0.3559,
+        "cluster_id": 3,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:4pE6SmD93nVr1yhkW3PiLD": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not so calming"
+        ],
+        "sentiment": -0.3559,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:7JWF6zMQnBlbLUNApXcGip": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "wrong, not great for the mood"
+        ],
+        "sentiment": -0.7502,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1qvzL0oWnc4msWpcDiAmGG": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so energetic"
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:1ROiNJVtWHvbZFYnVkqNXJ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "what a nice and energetic song"
+        ],
+        "sentiment": 0.6908,
+        "cluster_id": 2,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:4gvPbKEQyTZBoX2k7P1MFZ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not so calming"
+        ],
+        "sentiment": -0.3559,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:5ew8DU0Hqou3ppZdlggYuf": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "kind of calming"
+        ],
+        "sentiment": 0.4019,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:7Jnnsir5gWEOgEouBjkFH1": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so energetic and bright"
+        ],
+        "sentiment": 0.7474,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:1OJVYWIrDaGFszBSQCILJI": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song increased my energy"
+        ],
+        "sentiment": 0.4939,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:74fmYjFwt9CqEFAh8ybeBD": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "very energetic"
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:3N81FqYBsJLkPyuzHdqgUA": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "really energetic"
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:265TaSevXoJzUD693StBxs": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calming"
+        ],
+        "sentiment": 0.4576,
+        "cluster_id": 3,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:252gUwpkdZwgcXQuH6onlP": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Its so happy"
+        ],
+        "sentiment": 0.6115,
+        "cluster_id": 1,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:7p1ATyecaQmtiXKY7mdzRN": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "perfect for the category"
+        ],
+        "sentiment": 0.5719,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:19CxEqG4kZwfmNUdA2yp9R": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so energetic"
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:1ZCG4kPBFSITR3YGPl2WLP": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "what an energetic song"
+        ],
+        "sentiment": 0.4404,
+        "cluster_id": 2,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:0sYPxxe41EaxoYWcv6YJHj": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so calming"
+        ],
+        "sentiment": 0.4576,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:6ut129izeC6bX7LQXG5FpY": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the calm mood"
+        ],
+        "sentiment": 0.7506,
+        "cluster_id": 3,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:6aYi9yXzqkZJ8AOhrp9DQa": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the sad mood category"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:0zUmmWcbicRVUi1qfkZNsp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the sad mood category"
+        ],
+        "sentiment": 0.25,
+        "cluster_id": 0,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:5GRIdZtqe3nIT3IpU0ygts": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "kind of correct for the mood category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:1TVytW8KF6lq6yFtJze61w": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood category"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:326B0xxsEq9mqlyZzHJcgJ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "wrong, this is not correct for the mood category"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:48mrYq8Syh919TZKxmSEKs": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood category"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:2pwBIOFGf3rHwOdoEyT3Gm": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so happy"
+        ],
+        "sentiment": 0.6115,
+        "cluster_id": 1,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:2cbic3TiUENlJX91y67ARR": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not correct for the energetic category"
+        ],
+        "sentiment": 0.4404,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:1K5IrfpSHU6RXQx1zZXzgk": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the mood category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:2uGe09R5EYN49mkBuyhezQ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this is really a happy song"
+        ],
+        "sentiment": 0.6096,
+        "cluster_id": 1,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:5nnuMMrPgKJRxUqbU86fvv": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so happy song"
+        ],
+        "sentiment": 0.6115,
+        "cluster_id": 1,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:0ooZTbadcxB1rWlFjQVMmB": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the mood category"
+        ],
+        "sentiment": 0.6249,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:0WznLeFE5gOyBU8mUyDx4d": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for the sad mood category"
+        ],
+        "sentiment": 0.25,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:0wxwXyrJYHyGUKlBaCIhgp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it gave me energy boost"
+        ],
+        "sentiment": 0.5859,
+        "cluster_id": 2,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:1NDpzH7FlB9s33OzHkHh3P": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "a great energetic song"
+        ],
+        "sentiment": 0.7906,
+        "cluster_id": 2,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:7cdmELYEknyXkoZq8mgdty": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "wrong",
+            "not correct for the mood"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:0Njhe8XFWzGKlUzZqoRqS7": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:5pTfwxnRNxDjt2HyMXUF3H": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate for the mood category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:06vt7BIMyVW3CrvWNQ5vCx": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:6sKpAmxs8JDfImwWSAd8zH": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the mood category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:3zV1Hyn1dmhWcM8yq6rPHv": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:7ghGXQ35C6TzF7fLRyqS1I": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:3AhgawKFwye0sccHUfbkPZ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:4D838jUZFdQzTVqQby1LJS": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:5XlHEDn2JQHY6QSBAzex7P": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:3PP71d9XijI6QxbmIDyWjn": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "wrong"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:5Nd3HbMUXX8O9D5gxqlAif": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "wrong"
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    
+         "spotify:track:66RoJOAudLIgJ5WLnodZ81": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Not really happy."
+            ],
+            "sentiment": -0.4964,
+            "cluster_id": 1,
+            "intensity": "1",
+            "weighted_score": 0
+        },
+        "spotify:track:1ydxYaHlMEYo1feVlETI4f": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A happy song."
+            ],
+            "sentiment": 0.5719,
+            "cluster_id": 1,
+            "intensity": "1",
+            "weighted_score": 0
+        },
+        "spotify:track:7qoaMWT3eRCKG1RN6dVuOY": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A great happy song."
+            ],
+            "sentiment": 0.8316,
+            "cluster_id": 1,
+            "intensity": "1",
+            "weighted_score": 0
+        },
+        "spotify:track:1kN6Y8g8TomkObrQfhMGkf": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A kinda happy song."
+            ],
+            "sentiment": 0.5279,
+            "cluster_id": 1,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:3yGdLMObhf3IbmzfLohAAh": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "An amazing happy song."
+            ],
+            "sentiment": 0.8176,
+            "cluster_id": 1,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:48MebGFBVtzHGIKiTPhPxp": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "I like it. It's pretty joyful."
+            ],
+            "sentiment": 0.8625,
+            "cluster_id": 1,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:1Ylj0v9plw0zCdFeVRNelQ": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's great! A joyful song."
+            ],
+            "sentiment": 0.8516,
+            "cluster_id": 1,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:67pn43vruNknnRILTlEnS2": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "I like it. It's an amazing happy song."
+            ],
+            "sentiment": 0.875,
+            "cluster_id": 1,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:4AGPU9325LRTIBsBSJ5v75": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's great! Love this happy song."
+            ],
+            "sentiment": 0.923,
+            "cluster_id": 1,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:2ysKXxJSdhfXld3h7gLwek": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "I love it! It's a really happy song."
+            ],
+            "sentiment": 0.8585,
+            "cluster_id": 1,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:57uBHI2aQPDxsDHgHMGgBb": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's happy and calm at the same time."
+            ],
+            "sentiment": 0.7184,
+            "cluster_id": 1,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:5sWbwccBcyHsg5LEKWGZo9": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's not really a happy song."
+            ],
+            "sentiment": -0.4946,
+            "cluster_id": 1,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:2oORAKlxaN20gTXUPW4htz": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It is a great happy song."
+            ],
+            "sentiment": 0.8316,
+            "cluster_id": 1,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:3uHKEi9VopbcnCdPu3Akbk": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's kinda happy."
+            ],
+            "sentiment": 0.5279,
+            "cluster_id": 1,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:1p0qtngrxUynTaedvvBG06": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's an energetic and happy song."
+            ],
+            "sentiment": 0.765,
+            "cluster_id": 1,
+            "intensity": "4",
+            "weighted_score": 0
+        },
+        "spotify:track:6O1VWYPfl85dDeKiaCJKza": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It is a good happy song and it's energetic."
+            ],
+            "sentiment": 0.8591,
+            "cluster_id": 1,
+            "intensity": "4",
+            "weighted_score": 0
+        },
+        "spotify:track:0K76ZoODQpb87LQtzxrd5N": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "An energetic song."
+            ],
+            "sentiment": 0.4404,
+            "cluster_id": 1,
+            "intensity": "4",
+            "weighted_score": 0
+        },
+        "spotify:track:3JWEMzwpcWCvu4Qw1BIbYi": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's a good happy song."
+            ],
+            "sentiment": 0.765,
+            "cluster_id": 1,
+            "intensity": "4",
+            "weighted_score": 0
+        },
+        "spotify:track:0olpACaYbgczTZAzAgQEHK": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It is kinda happy."
+            ],
+            "sentiment": 0.5279,
+            "cluster_id": 1,
+            "intensity": "5",
+            "weighted_score": 0
+        },
+        "spotify:track:0ms5bzYdvWBnrayTs9RFcf": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "I like it. It's a great happy song."
+            ],
+            "sentiment": 0.8834,
+            "cluster_id": 1,
+            "intensity": "5",
+            "weighted_score": 0
+        },
+        "spotify:track:0pMriSbt8P3aVMX1knQvQQ": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It has a great joyful energy."
+            ],
+            "sentiment": 0.8779,
+            "cluster_id": 1,
+            "intensity": "5",
+            "weighted_score": 0
+        },
+        "spotify:track:0wv2TfpDOrGoURfeAm3h1K": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It is a great happy dance song."
+            ],
+            "sentiment": 0.8316,
+            "cluster_id": 1,
+            "intensity": "5",
+            "weighted_score": 0
+        },
+        "spotify:track:0JZGN7ASIqeSShQhrxhe0y": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "An upbeat song with happy vibes."
+            ],
+            "sentiment": 0.5719,
+            "cluster_id": 1,
+            "intensity": "5",
+            "weighted_score": 0
+        },
+        "spotify:track:2IRl9JAuTVRrebcMN4Eroc": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It fits into the happy category."
+            ],
+            "sentiment": 0.5719,
+            "cluster_id": 1,
+            "intensity": "5",
+            "weighted_score": 0
+        },
+        "spotify:track:4Ktrw6gaTsThcVhReWWG9K": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A great cheerful and happy song!"
+            ],
+            "sentiment": 0.9117,
+            "cluster_id": 1,
+            "intensity": "6",
+            "weighted_score": 0
+        },
+        "spotify:track:6hTsr0ANHmLbeFfk8UCrIZ": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "This song is perfect for the happy holiday mood."
+            ],
+            "sentiment": 0.8779,
+            "cluster_id": 1,
+            "intensity": "6",
+            "weighted_score": 0
+        },
+        "spotify:track:6qkXVDKHlmTYqsdi8yChLi": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A great happy song with upbeat music."
+            ],
+            "sentiment": 0.8316,
+            "cluster_id": 1,
+            "intensity": "6",
+            "weighted_score": 0
+        },
+        "spotify:track:4JWPdkrjQhOA46YXwclTOp": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A great happy song. It fits the intensity level and mood."
+            ],
+            "sentiment": 0.8316,
+            "cluster_id": 1,
+            "intensity": "6",
+            "weighted_score": 0
+        },
+        "spotify:track:7tPW4cLySo5f6WCVUxYvC4": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's definitely a happy song with lots of energy."
+            ],
+            "sentiment": 0.8176,
+            "cluster_id": 1,
+            "intensity": "6",
+            "weighted_score": 0
+        },
+        "spotify:track:3AMnOVxEHUgVrythGgqPhI": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A kinda happy song."
+            ],
+            "sentiment": 0.5279,
+            "cluster_id": 1,
+            "intensity": "6",
+            "weighted_score": 0
+        },
+        "spotify:track:3P4Lsg2MNqG8XLXZJUo4GT": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It definitely fits the happy mood label."
+            ],
+            "sentiment": 0.7506,
+            "cluster_id": 1,
+            "intensity": "6",
+            "weighted_score": 0
+        },
+        "spotify:track:3kxKFs7wTi10kxH7tF62lC": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It doesn't fit the happy mood label."
+            ],
+            "sentiment": -0.6259,
+            "cluster_id": 1,
+            "intensity": "6",
+            "weighted_score": 0
+        },
+        "spotify:track:2mJOngYlqgfdLMBSxPcJL3": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Strong party vibe fits the happy mood."
+            ],
+            "sentiment": 0.8658,
+            "cluster_id": 1,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:0kkrYmymos5mWmHsXXSGNg": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A sad and dark song. Kinda depressing."
+            ],
+            "sentiment": -0.6605,
+            "cluster_id": 0,
+            "intensity": "9",
+            "weighted_score": 0
+        },
+        "spotify:track:0PvEx6pPJpt3mz4HxMf4o1": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's an interesting song. Kinda sad."
+            ],
+            "sentiment": -0.4228,
+            "cluster_id": 0,
+            "intensity": "9",
+            "weighted_score": 0
+        },
+        "spotify:track:4P3LBZjsWULnAS08KebYfW": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's a great sad song."
+            ],
+            "sentiment": 0.25,
+            "cluster_id": 0,
+            "intensity": "9",
+            "weighted_score": 0
+        },
+        "spotify:track:29p8XJUPeeS3t9XwJt69g0": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A great calming song."
+            ],
+            "sentiment": 0.7783,
+            "cluster_id": 3,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:2FUvhaRMYngFTjEUADVkmq": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Great for calming the mind."
+            ],
+            "sentiment": 0.7783,
+            "cluster_id": 3,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:4Um9Lzn6BEvB5OA4I1kYD4": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It' kinda calming.\n"
+            ],
+            "sentiment": 0.3415,
+            "cluster_id": 3,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:1IaBGYToXPPJGDv1lmnMnE": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's very calming."
+            ],
+            "sentiment": 0.4576,
+            "cluster_id": 3,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:495yKNbAKF5CcwYizd6XIP": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A meditative and soothing song. Great for when you need to calm down."
+            ],
+            "sentiment": 0.8779,
+            "cluster_id": 3,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:6KvqT45vG3fDpeN4VcQILe": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Kinda calm."
+            ],
+            "sentiment": 0.2516,
+            "cluster_id": 3,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:0jfHy96HxLUFY1uOrd8YCj": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A very soothing and relaxing sound."
+            ],
+            "sentiment": 0.7233,
+            "cluster_id": 3,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:3CaLsTJggstt7xfCaVdCLw": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's like a hymn. Calm with energy."
+            ],
+            "sentiment": 0.7096,
+            "cluster_id": 3,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:0jNHatKLiOXIR6RIItLplH": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "The song has brief moments of melodic calm, but it's not really a calm song."
+            ],
+            "sentiment": -0.2737,
+            "cluster_id": 3,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:1STVGdZWMe3UqZhOwNNgHh": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "An excellent calm song."
+            ],
+            "sentiment": 0.7184,
+            "cluster_id": 3,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:49LY0E5OBh4q65ST5wpMi0": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "An amazing calming song with joyful emotions."
+            ],
+            "sentiment": 0.886,
+            "cluster_id": 3,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:6GuHYYq248OibVkD0DpF6y": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Doesn't really fit happy."
+            ],
+            "sentiment": -0.6737,
+            "cluster_id": 1,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:7Kpg31hh8AxDexY8qzLNBT": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Kinda happy, but fits better under energetic."
+            ],
+            "sentiment": 0.8721,
+            "cluster_id": 1,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:1AiAQF07CLQmJq1oyc6gce": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It fits perfectly with the happy songs."
+            ],
+            "sentiment": 0.836,
+            "cluster_id": 1,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:7qOsSOpiL3R8RKyiBtIYNQ": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "I love this song! It has such a positive and happy energy."
+            ],
+            "sentiment": 0.9312,
+            "cluster_id": 1,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:0BcVMznazo7hB8yk7NQz3m": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It kinda fits the happy mood."
+            ],
+            "sentiment": 0.5325,
+            "cluster_id": 1,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:58X2vGyNWT2ZPEaGUw1tAb": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's a great happy song."
+            ],
+            "sentiment": 0.8316,
+            "cluster_id": 1,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:6hHdUasc0PGACTyPbRcPJ2": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A really fun and happy song. It fits great."
+            ],
+            "sentiment": 0.9128,
+            "cluster_id": 1,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:68HGqHHc41qmJHUWlLUKCd": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A really good happy and catchy song. So danceable!"
+            ],
+            "sentiment": 0.8158,
+            "cluster_id": 1,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:5Zn8rrawpLXxLCVRvpUbRa": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's not really a happy song. Fit's better with energetic."
+            ],
+            "sentiment": 0.381,
+            "cluster_id": 1,
+            "intensity": "7",
+            "weighted_score": 0
+        },
+        "spotify:track:3yRLROmAcKJBqTrdEczFB8": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "This is a great happy, catchy and vibrant song."
+            ],
+            "sentiment": 0.9042,
+            "cluster_id": 1,
+            "intensity": "8",
+            "weighted_score": 0
+        },
+        "spotify:track:0d79UTYV7bqvZ3EVZjcr07": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A great happy song that is festive and fun."
+            ],
+            "sentiment": 0.9337,
+            "cluster_id": 1,
+            "intensity": "8",
+            "weighted_score": 0
+        },
+        "spotify:track:6XBds0advV7NXUHxJWsQ0v": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Playful and bold, perfect for a happy mood."
+            ],
+            "sentiment": 0.9169,
+            "cluster_id": 1,
+            "intensity": "8",
+            "weighted_score": 0
+        },
+        "spotify:track:7JK9F9bUjQ0OqaydXGHejA": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A great joyful and happy song."
+            ],
+            "sentiment": 0.9136,
+            "cluster_id": 1,
+            "intensity": "8",
+            "weighted_score": 0
+        },
+        "spotify:track:6vgR5Uad2PBZ9mAnTMFIYn": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's not really a happy song."
+            ],
+            "sentiment": -0.4946,
+            "cluster_id": 1,
+            "intensity": "8",
+            "weighted_score": 0
+        },
+        "spotify:track:0IVCc0VlNsNbHN2oJXPTf0": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Not a clearly happy song but kinda fits."
+            ],
+            "sentiment": -0.3875,
+            "cluster_id": 1,
+            "intensity": "8",
+            "weighted_score": 0
+        },
+        "spotify:track:5bvR6HZsnbDPs1dGeuc0Vg": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Fun and bold with a happy energy."
+            ],
+            "sentiment": 0.8934,
+            "cluster_id": 1,
+            "intensity": "8",
+            "weighted_score": 0
+        },
+        "spotify:track:1EcPiu9yccqlIGYdAjXiRT": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Fits better with energetic."
+            ],
+            "sentiment": 0.7003,
+            "cluster_id": 1,
+            "intensity": "8",
+            "weighted_score": 0
+        },
+        "spotify:track:2ozJmnjqCMJavEKoHqiou0": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Kinda happy. Upbeat and catchy."
+            ],
+            "sentiment": 0.5279,
+            "cluster_id": 1,
+            "intensity": "8",
+            "weighted_score": 0
+        },
+        "spotify:track:66HseVoGa3e7D9O7MCTSfI": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Bold and catchy. Definitely a happy song."
+            ],
+            "sentiment": 0.8402,
+            "cluster_id": 1,
+            "intensity": "8",
+            "weighted_score": 0
+        },
+        "spotify:track:2947Y07If3YbnD7Jqnu5Pm": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Bright, catchy, and lively. Fits the happy mood."
+            ],
+            "sentiment": 0.8591,
+            "cluster_id": 1,
+            "intensity": "9",
+            "weighted_score": 0
+        },
+        "spotify:track:1DpplvWkmuoPH7Pe5GpWCw": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Not really happy."
+            ],
+            "sentiment": -0.4964,
+            "cluster_id": 1,
+            "intensity": "9",
+            "weighted_score": 0
+        },
+        "spotify:track:3fGo83HAwptFAFeYl27IRE": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's a kinda happy song."
+            ],
+            "sentiment": 0.5279,
+            "cluster_id": 1,
+            "intensity": "9",
+            "weighted_score": 0
+        },
+        "spotify:track:04BXsortkjpUxf1sOtLRXE": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Playful and energetic. A great happy song."
+            ],
+            "sentiment": 0.9274,
+            "cluster_id": 1,
+            "intensity": "9",
+            "weighted_score": 0
+        },
+        "spotify:track:2qnIGmZIpYX8VdzCBj59f0": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Fits energetic mood better."
+            ],
+            "sentiment": 0.7003,
+            "cluster_id": 1,
+            "intensity": "10",
+            "weighted_score": 0
+        },
+        "spotify:track:4Mhq9UBgL4DEeoOSEslbWC": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A great melancholic and sad song."
+            ],
+            "sentiment": 0.1779,
+            "cluster_id": 0,
+            "intensity": "1",
+            "weighted_score": 0
+        },
+        "spotify:track:2RLmbrYJydTfgxA8Wi9KoP": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A great sad song."
+            ],
+            "sentiment": 0.25,
+            "cluster_id": 0,
+            "intensity": "1",
+            "weighted_score": 0
+        },
+        "spotify:track:1TVytW8KF6lq6yFtJze61w": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A great sad song. Soft and emotional."
+            ],
+            "sentiment": 0.3818,
+            "cluster_id": 0,
+            "intensity": "1",
+            "weighted_score": 0
+        },
+        "spotify:track:0avyrMFNsAkN1ggXEnn9fh": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A kinda sad song."
+            ],
+            "sentiment": -0.4228,
+            "cluster_id": 0,
+            "intensity": "1",
+            "weighted_score": 0
+        },
+        "spotify:track:6BN7h1pE2o4UlSCfEZb9E9": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's not really an energetic song."
+            ],
+            "sentiment": -0.3843,
+            "cluster_id": 2,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:6BmSaKZjPiJB0xFKzxhUOr": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Not really an energetic song."
+            ],
+            "sentiment": -0.3843,
+            "cluster_id": 2,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:0Ff8iqVvjIJYzxoZYzmVdE": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It's kinda calm."
+            ],
+            "sentiment": 0.2516,
+            "cluster_id": 2,
+            "intensity": "2",
+            "weighted_score": 0
+        },
+        "spotify:track:0Ss50OU9tCozI7JIywkv14": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "It is a great energetic song!"
+            ],
+            "sentiment": 0.807,
+            "cluster_id": 2,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:1zlIZ8I2941vGAVN4OS7xl": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "I like the song. It's a great energetic song that suits the intensity level."
+            ],
+            "sentiment": 0.8591,
+            "cluster_id": 2,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:3P7xjKJTg7tG7xWlyCpfih": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "A great energetic song."
+            ],
+            "sentiment": 0.7906,
+            "cluster_id": 2,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:0kgNKjb3MRJu1GK77gb2cn": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Kinda energetic."
+            ],
+            "sentiment": -0.3865,
+            "cluster_id": 2,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:2DRNRBJr2L3kw9Lj0zTLC7": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "The song is energetic and kinda calm at the same time."
+            ],
+            "sentiment": 0.6003,
+            "cluster_id": 2,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:3AAu0viADpL0jFsRzOrlmR": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "Kinda energetic."
+            ],
+            "sentiment": 0.3832,
+            "cluster_id": 2,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:5WZDLZVCvY1rEyNir6k8Pg": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "I love this song! A great energetic song with melancholy!"
+            ],
+            "sentiment": 0.8715,
+            "cluster_id": 2,
+            "intensity": "3",
+            "weighted_score": 0
+        },
+        "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+            "likes": 0,
+            "dislikes": 0,
+            "comments": [
+                "correct for the category"
+            ],
+            "sentiment": 0.0,
+            "cluster_id": 0,
+            "intensity": "7",
+            "weighted_score": 0
+        }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    }
+    ,
+    "spotify:track:5XM2FOhXcBJQzABOmlQQEl": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:1fg3g61ajYxwZYiipGYAWp": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "accurate"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 3,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:3y5BNYwdxsfeY0ahn5DxHI": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Not bad, not great."
+        ],
+        "sentiment": 0.6754,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:0UOGPZbzujIHSj2rIA3fMB": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this is a great happy song"
+        ],
+        "sentiment": 0.8316,
+        "cluster_id": 1,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:3ICZzF88Z24aTpzmViGNIU": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so happy and bright song"
+        ],
+        "sentiment": 0.7996,
+        "cluster_id": 1,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:7eupuYtKtvDBsOqO29mTia": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "both energetic and happy song"
+        ],
+        "sentiment": 0.765,
+        "cluster_id": 1,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:6sKpAmxs8JDfImwWSAd8zH": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I am really satisfied from this song"
+        ],
+        "sentiment": 0.4754,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:74ctB0ufdAY69TDN9J18V9": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song is really calming"
+        ],
+        "sentiment": 0.4576,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:5I9sHwLDX28tLtzVgKLtpr": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song is not calming i did not like it"
+        ],
+        "sentiment": -0.5216,
+        "cluster_id": 3,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:0bB3A98KKmwZfEJ08X9o4r": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song is sad but correct for the category"
+        ],
+        "sentiment": -0.2617,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },"spotify:track:3eJbkl0GzPQEuq9wa749XH": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "not great for the category"
+        ],
+        "sentiment": -0.5096,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:33WYMryvB4X20YortgFCcC": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "correct for the category"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:03HPn0aH1zccSJFTQcuTbt": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so energetic, I love it"
+        ],
+        "sentiment": 0.8251,
+        "cluster_id": 2,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:70wbvHBSqeB9Xgr690cAV9": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for dancing, I love it"
+        ],
+        "sentiment": 0.8519,
+        "cluster_id": 2,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:2sHvrtEycDBSldBaN8Jy8p": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I wanted to dance to this song"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 1,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:4efulcRC3xYFaxT0D6Gx2s": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "such a bright and happy and great song"
+        ],
+        "sentiment": 0.8934,
+        "cluster_id": 1,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:7DAJJOyHFKwljvLfhtUUJB": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I really loved this song, it increased my happiness"
+        ],
+        "sentiment": 0.8718,
+        "cluster_id": 1,
+        "intensity": "7",
+        "weighted_score": 0
+    },"spotify:track:3S6DSiBFZuQrkqirp33iSB": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so energetic"
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:3JfBv2YfwPdflYUGMCeHgt": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "strong rhythm, light emotional weight."
+        ],
+        "sentiment": 0.5994,
+        "cluster_id": 2,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:3z57pZTmJLZf8hCSsFzfZK": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "its feel energetic but not It\u2019s energetic, but not overly get the energetic mood."
+        ],
+        "sentiment": 0.4001,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:6e5wD3Pq64rszYalUZJSB6": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It\u2019s energetic, and I feel it.\n"
+        ],
+        "sentiment": 0.4404,
+        "cluster_id": 2,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:3kGr39dBiUUdFNw6iiLTDV": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It feels lively, but a bit too light for the feel energetic."
+        ],
+        "sentiment": 0.7003,
+        "cluster_id": 2,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:6sgU0FdR0FroEzK1rTdJzi": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Definitely energetic and feels good."
+        ],
+        "sentiment": 0.8176,
+        "cluster_id": 2,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:4lRYOXcaLhIgjWgO3wmgH0": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It forced move, but not with maximum force."
+        ],
+        "sentiment": -0.25,
+        "cluster_id": 2,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:0pbmMBMr0Ff18fURmc7ElG": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "No doubt, it brings the heat for energy. "
+        ],
+        "sentiment": 0.4956,
+        "cluster_id": 2,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:05hLYeNT8mZeSmKJMMU2w1": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It\u2019s not fast-paced, but the emotional energy is high.\n"
+        ],
+        "sentiment": 0.5499,
+        "cluster_id": 2,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:0ey9kOlYcjJQmCn2UlTwvm": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It hits hard and keeps the energy high throughout."
+        ],
+        "sentiment": 0.1779,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:2U3wGsHvZejtn8rZo7R1uV": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song doesn't feel energetic enough."
+        ],
+        "sentiment": -0.3412,
+        "cluster_id": 2,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:6bbURWEZl7c6p6WTqwEsno": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "More chill than feel energetic."
+        ],
+        "sentiment": 0.4404,
+        "cluster_id": 2,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:5UOpk0muckaZKAzqJKr1rq": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "Definitely works for a sadness."
+        ],
+        "sentiment": -0.0516,
+        "cluster_id": 0,
+        "intensity": "1",
+        "weighted_score": 0
+    },
+    "spotify:track:09uFG475FoA4Ds6B2eRFSb": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It feels a bit sad."
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "2",
+        "weighted_score": 0
+    },
+    "spotify:track:25rVj3vBLwE6Fo8C8NFSwb": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It's absolutely so sad, I almost cry."
+        ],
+        "sentiment": -0.799,
+        "cluster_id": 0,
+        "intensity": "3",
+        "weighted_score": 0
+    },
+    "spotify:track:2XWNzDHZbgNJIpGmxq6QHJ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it's not sad, \u0131 think it's calm."
+        ],
+        "sentiment": 0.5932,
+        "cluster_id": 0,
+        "intensity": "4",
+        "weighted_score": 0
+    },
+    "spotify:track:2WIzgosBB7yRZJrwuEVudv": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it's not sad, \u0131 think it's energetic."
+        ],
+        "sentiment": 0.6656,
+        "cluster_id": 0,
+        "intensity": "5",
+        "weighted_score": 0
+    },
+    "spotify:track:6RZ8XyeLf77Qiby52iXW8b": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "It's a really sad song."
+        ],
+        "sentiment": -0.5256,
+        "cluster_id": 0,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:76s5sKaRGyEsSJScPgsJiJ": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "A balanced mix of sadness and calm."
+        ],
+        "sentiment": -0.1531,
+        "cluster_id": 0,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:42RlMmEWuJVLsNdCsDVdl8": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it's not feel enough sad."
+        ],
+        "sentiment": 0.3724,
+        "cluster_id": 0,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:4baNWC8kb6xKnlwtM0nJy4": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it's feel enough sad."
+        ],
+        "sentiment": -0.4767,
+        "cluster_id": 0,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:3jpjJbmEPqOIFuTQnLJfHi": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "it's sad and emotional."
+        ],
+        "sentiment": -0.3612,
+        "cluster_id": 0,
+        "intensity": "10",
+        "weighted_score": 0
+    },
+    "spotify:track:70wbvHBSqeB9Xgr690cAV9": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "great for dancing, I love it"
+        ],
+        "sentiment": 0.8519,
+        "cluster_id": 2,
+        "intensity": "6",
+        "weighted_score": 0
+    },
+    "spotify:track:2sHvrtEycDBSldBaN8Jy8p": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I wanted to dance to this song"
+        ],
+        "sentiment": 0.0,
+        "cluster_id": 1,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:4efulcRC3xYFaxT0D6Gx2s": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "such a bright and happy and great song"
+        ],
+        "sentiment": 0.8934,
+        "cluster_id": 1,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:7DAJJOyHFKwljvLfhtUUJB": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "I really loved this song, it increased my happiness"
+        ],
+        "sentiment": 0.8718,
+        "cluster_id": 1,
+        "intensity": "7",
+        "weighted_score": 0
+    },
+    "spotify:track:36Mq8RgVrmPp5eNSwFZQ9u": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "such an energetic song"
+        ],
+        "sentiment": 0.4404,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:3p3LVZ7hDnIaiIMVXpBOp1": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "a great energetic song"
+        ],
+        "sentiment": 0.7906,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:4crUzZPASH61lrPkdH3vga": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song is so energetic and great"
+        ],
+        "sentiment": 0.8444,
+        "cluster_id": 2,
+        "intensity": "8",
+        "weighted_score": 0
+    },
+    "spotify:track:19CxEqG4kZwfmNUdA2yp9R": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "this song is great for clubbing and it is so energetic"
+        ],
+        "sentiment": 0.8334,
+        "cluster_id": 2,
+        "intensity": "9",
+        "weighted_score": 0
+    },
+    "spotify:track:1c5dZ7jjvFOPoi8XkotLFk": {
+        "likes": 0,
+        "dislikes": 0,
+        "comments": [
+            "so energetic"
+        ],
+        "sentiment": 0.4927,
+        "cluster_id": 2,
+        "intensity": "9",
+        "weighted_score": 0
+    }
+
+
+    
+}
